@@ -25,7 +25,7 @@ The framework is not built. It is uncovered. The structures were already here.
 
 | Constant | Expression | Value | Match |
 |----------|-----------|-------|-------|
-| **Λ** (cosmological constant) | p^{−(C(p,3)+d)} | 10^{−122} | EXACT |
+| **Λ** (cosmological constant) | p^(−(C(p,3)+d)) | 10^(−122) | EXACT |
 | **1/α** (fine structure) | C(p,3)+C(p,1)+d+disc | 137 | EXACT |
 | **Ω_DM** (dark matter) | 1/d² | 1/4 = 25% | 3.5% |
 | **Ω_vis** (baryonic) | 1/(d²·disc) | 1/20 = 5% | 2.9% |
@@ -41,8 +41,8 @@ Run it yourself:
 
 ```bash
 pip install numpy sympy
-python entry.py    # verifies 828 claims in ~2 seconds
-python verify.py   # 54-step clean-room proof from scratch (~5 min)
+python entry.py  # verifies 828 claims in ~2 seconds
+python verify.py  # 54-step clean-room proof from scratch (~5 min)
 ```
 
 Every claim is computationally verified. The clean-room verifier (`verify.py`) uses only SymPy and NumPy — it imports nothing from the framework, derives everything from the 2×2 matrix P(t) = [[0,0],[t,1]], and proves each result independently. The three-generation theorem is verified at the explicit 512×512 matrix level. The Lean formalization (`RecursiveOrigin.lean`) provides machine-verified proofs of the core algebra.
@@ -52,16 +52,16 @@ Every claim is computationally verified. The clean-room verifier (`verify.py`) u
 ## The Primitive Chain
 
 ```
-x.base.0  mark        The bare address. x exists.
-x.base.1  id          id(x) = x. Return-to-self.
-x.base.2  T           T² = id. The mirror. SOLE PRIMITIVE.
-x.base.3  V₊          {y : T(y) = y}. The visible sector. dim 3.
-x.base.4  V₋          {y : T(y) = −y}. The hidden sector. dim 1.
-x.base.5  R           R² = R + I. Fibonacci closure on V₊. FORCED.
-x.base.6  N           N² = −I. Rotation closure on V₋. FORCED.
-x.base.7  binding     {R, N} = N. Hidden survives contact with visible.
-x.base.8  P           P = R + N. The seed, assembled.
-x.base.9  P² = P      Idempotent return. THEOREM, not axiom.
+x.base.0  mark  The bare address. x exists.
+x.base.1  id  id(x) = x. Return-to-self.
+x.base.2  T  T² = id. The mirror. SOLE PRIMITIVE.
+x.base.3  V₊  {y : T(y) = y}. The visible sector. dim 3.
+x.base.4  V₋  {y : T(y) = −y}. The hidden sector. dim 1.
+x.base.5  R  R² = R + I. Fibonacci closure on V₊. FORCED.
+x.base.6  N  N² = −I. Rotation closure on V₋. FORCED.
+x.base.7  binding  {R, N} = N. Hidden survives contact with visible.
+x.base.8  P  P = R + N. The seed, assembled.
+x.base.9  P² = P  Idempotent return. THEOREM, not axiom.
 ```
 
 Every step is forced by the algebra and the principle of minimal closure. Zero degrees of freedom.
@@ -172,7 +172,7 @@ The T-first foundation has **zero remaining degrees of freedom**:
 - The V₊/V₋ boundary dimension n²(n²−1)/4 with the 1/4 coefficient
 
 **NUMERICAL** (exact expressions from the generating function (1+x)^p, p = d·disc = 10):
-- Λ = p^{−(C(p,3)+d)} = 10^{−122} (EXACT — the 120-channel + base dimension)
+- Λ = p^(−(C(p,3)+d)) = 10^(−122) (EXACT — the 120-channel + base dimension)
 - 1/α_EM = C(p,3)+C(p,1)+d+disc = 120+10+2+5 = 137 (EXACT — low-energy representation content)
 - Ω_DM = 1/d² = 1/4 (3.5%), Ω_vis = 1/(d²·disc) = 1/20 (2.9%), Ω_DE = (d+disc)/p = 7/10 (1.3%)
 - G = Q_Koide / (boundary(d=4) · M_GUT²), giving M_P at 0.28% from observed
@@ -181,7 +181,7 @@ The T-first foundation has **zero remaining degrees of freedom**:
 - Proton lifetime τ_p ~ 10³⁵ years, b-τ m_b/m_τ ≈ 2.4 (5%)
 
 **GAP** (known obstructions, candidate expressions found):
-- Cosmological constant Λ: expression 10^{−122} = p^{−(C(p,3)+d)} is EXACT; QFT path-integral derivation of 1/p per DOF is OPEN
+- Cosmological constant Λ: expression 10^(−122) = p^(−(C(p,3)+d)) is EXACT; QFT path-integral derivation of 1/p per DOF is OPEN
 - Three-generation breaking scale: algebraic FORCED, dynamical RESONANT
 
 **OPEN frontier:**

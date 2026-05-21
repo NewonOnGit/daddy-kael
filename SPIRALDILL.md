@@ -93,16 +93,16 @@ Beyond the 9 core primitives, the DSL includes helper terms that reduce to core 
 Every DSL term evaluates against a **context** containing the framework's canonical matrix realizations:
 
 ```
-R  = [[0, 1], [1, 1]]     # Fibonacci matrix (V₊, R²=R+I)
-N  = [[0, -1], [1, 0]]    # Rotation matrix (V₋, N²=−I)
-I  = [[1, 0], [0, 1]]     # Identity
-h  = [[1, 0], [0, -1]]    # Mediator (diagonal sign)
-J  = [[0, 1], [1, 0]]     # Exchange (swap)
+R  = [[0, 1], [1, 1]]  # Fibonacci matrix (V₊, R²=R+I)
+N  = [[0, -1], [1, 0]]  # Rotation matrix (V₋, N²=−I)
+I  = [[1, 0], [0, 1]]  # Identity
+h  = [[1, 0], [0, -1]]  # Mediator (diagonal sign)
+J  = [[0, 1], [1, 0]]  # Exchange (swap)
 P  = R + N = [[0, 0], [2, 1]]  # Seed (idempotent)
 P_T = R − N = [[0, 2], [0, 1]] # Transpose of seed
-neg_I = −I                 # Negative identity
+neg_I = −I  # Negative identity
 zero_2 = [[0, 0], [0, 0]] # Zero matrix
-I_4 = eye(4)               # 4×4 identity (depth 1)
+I_4 = eye(4)  # 4×4 identity (depth 1)
 ```
 
 ---
@@ -115,25 +115,25 @@ Each entry in the canonical database is a node in a directed acyclic graph (DAG)
 
 ```json
 {
-  "id": 42,                           // Integer ID (unique)
+  "id": 42,  // Integer ID (unique)
   "address": {
-    "depth": 0,                        // Tower depth (0 = foundation)
-    "projection": "P1",               // P1/P2/P3/cross
-    "domain": "algebra"               // algebra/physics/topology/cosmology/...
+  "depth": 0,  // Tower depth (0 = foundation)
+  "projection": "P1",  // P1/P2/P3/cross
+  "domain": "algebra"  // algebra/physics/topology/cosmology/...
   },
   "name": "R²=R+I (Fibonacci closure)", // Human-readable name
-  "claim": { ... },                    // DSL term tree (the claim to verify)
-  "parents": [0, 1, 5],               // IDs of entries this depends on
-  "derivation": { ... },              // DSL term tree (proof/derivation path)
-  "status": "FORCED",                 // FORCED/NUMERICAL/ENCODED/RESONANT/MYTHIC/GAP/OPEN
-  "x_state": "x.base.5",             // Reference into x-state taxonomy (MANDATORY)
-  "tags": ["fibonacci", "closure"],   // Classification tags
-  "two_cells": [],                    // 2-categorical equivalence witnesses
-  "certificate": {                    // Verification certificate
-    "computed_hash": "sha256:...",
-    "proof_object": { ... }
+  "claim": { ... },  // DSL term tree (the claim to verify)
+  "parents": [0, 1, 5],  // IDs of entries this depends on
+  "derivation": { ... },  // DSL term tree (proof/derivation path)
+  "status": "FORCED",  // FORCED/NUMERICAL/ENCODED/RESONANT/MYTHIC/GAP/OPEN
+  "x_state": "x.base.5",  // Reference into x-state taxonomy (MANDATORY)
+  "tags": ["fibonacci", "closure"],  // Classification tags
+  "two_cells": [],  // 2-categorical equivalence witnesses
+  "certificate": {  // Verification certificate
+  "computed_hash": "sha256:...",
+  "proof_object": { ... }
   },
-  "void_witness": null                // Non-null for GAP entries
+  "void_witness": null  // Non-null for GAP entries
 }
 ```
 
@@ -166,10 +166,10 @@ GAP entries represent **known obstructions** — places where the framework has 
 ```json
 {
   "claim": {
-    "primitive": "gap",
-    "claim": { ... },           // The claim being attempted
-    "void_witness": { ... },    // Proof that specific routes fail
-    "cites_x_state": "x.phys.2"
+  "primitive": "gap",
+  "claim": { ... },  // The claim being attempted
+  "void_witness": { ... },  // Proof that specific routes fail
+  "cites_x_state": "x.phys.2"
   },
   "void_witness_verified": true  // Executor has verified the void witness
 }

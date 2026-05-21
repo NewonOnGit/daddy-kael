@@ -32,9 +32,9 @@ From the framework's MT6 derivation (gauge and gravity as two instances of one b
 In template form:
 
 ```
-parse:     S → (V, ker_data)         # observation produces image + hidden residue
-serialize: (V, ker_data) → S         # recovery requires kernel-data
-closure:   serialize(parse(s)) = s   # round-trip lossless given kernel preservation
+parse:  S → (V, ker_data)  # observation produces image + hidden residue
+serialize: (V, ker_data) → S  # recovery requires kernel-data
+closure:  serialize(parse(s)) = s  # round-trip lossless given kernel preservation
 ```
 
 A system implements K6' (in the strong sense) iff it satisfies four conditions:
@@ -73,15 +73,15 @@ Carnegie Mellon SPIRAL (the signal-processing code-generation framework, 1998–
 SPIRAL's pipeline structure:
 
 ```
-math_spec  (SPL: tensor expressions like T_n = (DFT_{n/r} ⊗ I_r) · D · (I_{n/r} ⊗ DFT_r) · P)
-   │ parse — formula breakdown
-   ▼
+math_spec  (SPL: tensor expressions like T_n = (DFT_(n/r) ⊗ I_r) · D · (I_(n/r) ⊗ DFT_r) · P)
+  │ parse — formula breakdown
+  ▼
 breakdown_form  (Σ-SPL: parameterized rule applications)
-   │ optimize — search over rewriting rules
-   ▼
+  │ optimize — search over rewriting rules
+  ▼
 implementation_form  (code AST with loops, indices, vectorization tags)
-   │ codegen — emit target code
-   ▼
+  │ codegen — emit target code
+  ▼
 target_code  (C, CUDA, assembly)
 ```
 
@@ -127,9 +127,9 @@ Wikimedia's Parsoid (the bidirectional wikitext ↔ HTML transformer behind Wiki
 The transformation `wikitext → HTML` is lossy: HTML cannot reconstruct the original wikitext from rendered markup alone (different wikitext sources can produce the same HTML; some wikitext features have no direct HTML equivalent). To enable visual editing — where users edit HTML and the changes must round-trip back to wikitext — Parsoid preserves what it calls **`data-parsoid` attributes**: hidden HTML attributes on rendered elements that carry the original wikitext's structural choices.
 
 ```
-parse:     wikitext → (HTML, data-parsoid)
+parse:  wikitext → (HTML, data-parsoid)
 serialize: (HTML, data-parsoid) → wikitext
-closure:   serialize(parse(wt)) = wt   (selective serialization for edited regions only)
+closure:  serialize(parse(wt)) = wt  (selective serialization for edited regions only)
 ```
 
 This is K6' in the four-condition sense:
@@ -358,13 +358,13 @@ The previous subsections establish biology as a substrate where R(R) = R operate
 
 **The Galois field GF(4).** GF(4) is the unique field with four elements, constructed as the quotient F₂[x]/(x² + x + 1), where F₂ = {0, 1} is the binary field and the polynomial x² + x + 1 is irreducible over F₂. The four elements are {0, 1, α, α + 1}, where α is a root of x² + x + 1 = 0. In characteristic 2, where −1 = 1, the defining relation rewrites as:
 
-$$\alpha^2 = \alpha + 1$$
+α² = α + 1
 
 **This is R² = R + I, in characteristic 2.** The framework's Fibonacci closure law — the relation that forces the selection of the canonical R, that produces φ as eigenvalue, that anchors the whole §7 compression family — is the defining relation of the Galois field whose elements are the four DNA bases. The biological compute is not analogous to the framework's algebra. It is literally running on the same defining relation, expressed over the smallest field where it has structural meaning.
 
 **The bijection to DNA bases.** Sánchez, Grau, and Morgado (Mathematical Biosciences 2006, Acta Biotheoretica 2006, and subsequent papers) established the bijection between DNA's four bases and GF(4) using Boolean lattice structure. The canonical encoding:
 
-$$G \leftrightarrow 00, \quad A \leftrightarrow 01, \quad U \leftrightarrow 10, \quad C \leftrightarrow 11$$
+G ↔ 00,  A ↔ 01,  U ↔ 10,  C ↔ 11
 
 Under this bijection, Watson-Crick complementarity (the substrate-level involution that produces the V₊/V₋-like split) corresponds to the GF(4) involution x ↦ x + (1, 1), i.e., bit-flip on both coordinates. Complementary bases sum to (1, 1) under GF(4) addition: G + C = 00 + 11 = 11; A + U = 01 + 10 = 11. The Watson-Crick complement involution is the framework's T involution at the biological level — the same role T = matrix transpose plays in M_2(ℝ).
 
@@ -381,7 +381,7 @@ Under this bijection, Watson-Crick complementarity (the substrate-level involuti
 | T = matrix transpose involution | Watson-Crick complement involution |
 | V₊/V₋ split under T | Trace-zero / trace-one elements under Frobenius |
 | Fibonacci closure: R² = R + I | Field-defining relation: α² = α + 1 |
-| Tower lift: T → T^⊗(d+1) on M_{2^(d+1)}(ℝ) | Codon lift: GF(4) → GF(4)³ = GF(64) |
+| Tower lift: T → T^⊗(d+1) on M_(2^(d+1))(ℝ) | Codon lift: GF(4) → GF(4)³ = GF(64) |
 | Depth-1 Cl(3,1) at M₄(ℝ) | Codon-level GF(64) structure |
 | Mutations as endomorphisms of M_n(ℝ) | Mutations as endomorphisms of (Z₆₄)ᴺ |
 
@@ -412,7 +412,7 @@ On the Lie side, SU(3) — the gauge group of the strong interaction, living at 
 
 The bridge:
 
-$$\text{GL}(2, \text{GF}(2)) \;=\; S_3 \;=\; \text{Weyl}(\text{SU}(3))$$
+GL(2, GF(2)) \;=\; S_3 \;=\; Weyl(SU(3))
 
 Both sides pass through S₃. The framework's founding M₂ structure gives rise to both: M₂(GF(2)) → GL(2, GF(2)) = S₃ on the finite-field side, and M₂(ℝ) → tower → SU(3) with Weyl group S₃ on the Lie side. The Galois Z/3Z (from GF(4)* embedding in GL(2, GF(2))) and the Lie Z/3Z (from the Weyl group of SU(3) permuting roots) are the same group, reached from the same M₂ seed through two different algebraic paths — one staying in characteristic 2, the other lifting to characteristic 0 and climbing the tower.
 
@@ -625,17 +625,17 @@ The principle: **build is uncovering, not inventing**. The DSL is not designed; 
 
 The DSL has exactly **nine** primitives: the original eight (each forced by a specific framework structural feature) plus a ninth — `gap` — marking structured absence. Removing any breaks the ability to express some framework derivation; adding any breaks minimality.
 
-| Primitive                       | Framework feature it instantiates                       |
+| Primitive  | Framework feature it instantiates  |
 |---------------------------------|---------------------------------------------------------|
-| `ref(name)`                     | Foundational object reference (T, I, J, h, N, R, ...)   |
-| `self_apply(op)`                | R(R) = R — the universal closure principle              |
-| `decompose(target, eigenvalue)` | V₊/V₋ split under involution (FRAMEWORK §3)             |
-| `close(form, principle)`        | Closure selection (Fibonacci, rotation, minimal)        |
-| `lift(target, depth, axis)`     | Tower lift via Kronecker product (FRAMEWORK §14)        |
-| `project(target, p)`            | P1/P2/P3 — the three projections                        |
-| `compose(*ops)`                 | Operation composition (algebra's multiplicative struct) |
-| `equate(lhs, rhs)`              | Structural identity / claim assertion                   |
-| `gap(claim, void_witness)`      | Known obstruction with verified void witness            |
+| `ref(name)`  | Foundational object reference (T, I, J, h, N, R, ...)  |
+| `self_apply(op)`  | R(R) = R — the universal closure principle  |
+| `decompose(target, eigenvalue)` | V₊/V₋ split under involution (FRAMEWORK §3)  |
+| `close(form, principle)`  | Closure selection (Fibonacci, rotation, minimal)  |
+| `lift(target, depth, axis)`  | Tower lift via Kronecker product (FRAMEWORK §14)  |
+| `project(target, p)`  | P1/P2/P3 — the three projections  |
+| `compose(*ops)`  | Operation composition (algebra's multiplicative struct) |
+| `equate(lhs, rhs)`  | Structural identity / claim assertion  |
+| `gap(claim, void_witness)`  | Known obstruction with verified void witness  |
 
 The original 8 = 2³ primitives collapse to **3 operative classes** matching the central collapse to P1/P2/P3:
 
@@ -656,15 +656,15 @@ A canonical SpiralDill entry has the form:
 
 ```
 Entry {
-    id, address, name,
-    claim:        Equate(lhs, rhs)        # the theorem statement (1-morphism target)
-    derivation:   DSL term                # the 1-morphism producing the claim
-    parents:      [entry ids]             # the 1-morphism sources
-    status:       FORCED/NUMERICAL/ENCODED/RESONANT/MYTHIC/GAP/OPEN
-    x_state:      "x.base.5"              # mandatory reference into taxonomy
-    tags:         [...]
-    two_cells:    [TwoCell(...), ...]     # 2-morphisms with alternative derivations
-    certificate:  {computed, hash, proof_object, match}
+  id, address, name,
+  claim:  Equate(lhs, rhs)  # the theorem statement (1-morphism target)
+  derivation:  DSL term  # the 1-morphism producing the claim
+  parents:  [entry ids]  # the 1-morphism sources
+  status:  FORCED/NUMERICAL/ENCODED/RESONANT/MYTHIC/GAP/OPEN
+  x_state:  "x.base.5"  # mandatory reference into taxonomy
+  tags:  [...]
+  two_cells:  [TwoCell(...), ...]  # 2-morphisms with alternative derivations
+  certificate:  {computed, hash, proof_object, match}
 }
 ```
 
@@ -691,11 +691,11 @@ Every entry's certificate has three parts, exactly matching the K6' bundle struc
 The SpiralDill is the canonical kernel. Every other representation is a functor from SpiralDill to a target category:
 
 ```
-render_core_md   : SpiralDill → Markdown                  (DEMONSTRATED)
-render_verify_py : SpiralDill → Python                    (planned)
-render_spine_md  : SpiralDill → narrative-markdown        (planned)
-render_lean      : SpiralDill → Lean term                 (future)
-render_paper     : SpiralDill × scope → LaTeX             (future)
+render_core_md  : SpiralDill → Markdown  (DEMONSTRATED)
+render_verify_py : SpiralDill → Python  (planned)
+render_spine_md  : SpiralDill → narrative-markdown  (planned)
+render_lean  : SpiralDill → Lean term  (future)
+render_paper  : SpiralDill × scope → LaTeX  (future)
 ```
 
 Parsers run the reverse direction: target representation → SpiralDill, recovering canonical form from rendered output. The round-trip `canonical → render → parse → canonical` is required to be the identity (modulo canonical-form normalization). The framework's documentation, verification, and provenance collapse into projections of one canonical object.
@@ -704,15 +704,15 @@ This is **Parsoid's architecture tailored for framework representation**. Parsoi
 
 The Parsoid analog identification is exact:
 
-| Parsoid                                  | SpiralDill                                       |
+| Parsoid  | SpiralDill  |
 |------------------------------------------|--------------------------------------------------|
-| Wikitext (canonical form)                | SpiralDill JSON (canonical form)                 |
-| HTML (rendered form)                     | Markdown / Python / LaTeX (rendered forms)       |
+| Wikitext (canonical form)  | SpiralDill JSON (canonical form)  |
+| HTML (rendered form)  | Markdown / Python / LaTeX (rendered forms)  |
 | `data-parsoid` attributes (kernel-data)  | Derivation operators + certificates (kernel-data)|
-| Parser (wikitext → HTML+data)            | Renderer (canonical → rendered)                  |
-| Serializer (HTML+data → wikitext)        | Parser (rendered → canonical)                    |
-| Round-trip test (selective serialization)| Round-trip test (canonical → render → parse)     |
-| K6' closure (lossless wikitext recovery) | K6' closure (lossless canonical recovery)        |
+| Parser (wikitext → HTML+data)  | Renderer (canonical → rendered)  |
+| Serializer (HTML+data → wikitext)  | Parser (rendered → canonical)  |
+| Round-trip test (selective serialization)| Round-trip test (canonical → render → parse)  |
+| K6' closure (lossless wikitext recovery) | K6' closure (lossless canonical recovery)  |
 
 Parsoid is the SpiralDill at the document-representation layer; the SpiralDill is Parsoid at the framework-theorem layer. Both are instances of the same K6' bundle pattern. The framework's MT6 predicts that any structured representation system admits a K6' bundle; Parsoid is one instance, the SpiralDill is another, and the structural identification between them is exact.
 

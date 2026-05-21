@@ -38,7 +38,7 @@ The framework begins with a room: the algebra **M₂(ℝ)** of all 2×2 real mat
 
 M₂(ℝ) is a 4-dimensional real vector space with a canonical basis of four matrices:
 
-$$I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad J = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad h = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad N = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$$
+I = [[1, 0], [0, 1]],  J = [[0, 1], [1, 0]],  h = [[1, 0], [0, -1]],  N = [[0, -1], [1, 0]]
 
 These four matrices are not arbitrary — they are the *structurally natural* basis of M₂(ℝ), determined by the interplay of the algebra's multiplication and its transpose involution. Their algebraic relations are:
 
@@ -68,7 +68,7 @@ Why M₂(ℝ)? Not as a postulate, but as the minimal non-trivial stage. The 1×
 
 The framework's sole primitive is the **matrix transpose involution**:
 
-$$T : M_2(\mathbb{R}) \to M_2(\mathbb{R}), \qquad T(X) = X^\top$$
+T : M_2(ℝ) → M_2(ℝ),  T(X) = Xᵀ
 
 T acts on the room by reflecting every matrix across its main diagonal. Entry (i,j) becomes entry (j,i). This is not a choice among options — it is the unique operation that the room "knows about" intrinsically, the canonical anti-automorphism of the matrix algebra.
 
@@ -92,7 +92,7 @@ T has three defining properties:
 
 Because T² = id, the room decomposes uniquely into T's two eigenspaces:
 
-$$M_2(\mathbb{R}) = V_+ \oplus V_-$$
+M_2(ℝ) = V_+ ⊕ V_-
 
 where:
 
@@ -102,7 +102,7 @@ where:
 
 Every matrix X ∈ M₂(ℝ) decomposes uniquely as:
 
-$$X = X_+ + X_-, \qquad X_+ = \frac{1}{2}(X + T(X)) \in V_+, \qquad X_- = \frac{1}{2}(X - T(X)) \in V_-$$
+X = X_+ + X_-,  X_+ = 1/2(X + T(X)) ∈ V_+,  X_- = 1/2(X - T(X)) ∈ V_-
 
 The two subspaces are orthogonal under the Frobenius inner product: ⟨X₊, X₋⟩_F = tr(X₊ᵀ X₋) = 0 for all X₊ ∈ V₊, X₋ ∈ V₋.
 
@@ -119,7 +119,7 @@ Under complex Hermitian conjugation (T_ℂ), this asymmetry vanishes: dim V₊ =
 
 **V₊ is closed under squaring.** This is a Cayley-Hamilton consequence, not a separate axiom. For any X = αI + βJ + γh ∈ V₊:
 
-$$X^2 = (\alpha^2 + \beta^2 + \gamma^2) \cdot I + 2\alpha\beta \cdot J + 2\alpha\gamma \cdot h \in V_+$$
+X² = (α² + β² + γ²) · I + 2αβ · J + 2αγ · h ∈ V_+
 
 The cross-term βγ · {J, h} vanishes because J and h anticommute. Every X ∈ V₊ satisfies the Cayley-Hamilton identity X² = tr(X)·X − det(X)·I, with tr(X) = 2α and det(X) = α² − β² − γ².
 
@@ -141,29 +141,29 @@ This is the statement that R, when squared, returns to itself plus the identity 
 
 Among all elements R = αI + βJ + γh ∈ V₊ satisfying R² = aR + bI for integers a, b (so that R has integer trace and determinant, the simplest non-trivial algebraic structure), the Cayley-Hamilton identity gives:
 
-$$R^2 = \text{tr}(R) \cdot R - \det(R) \cdot I$$
+R² = tr(R) · R - det(R) · I
 
 So a = tr(R) = 2α and b = −det(R) = −(α² − β² − γ²). The discriminant is:
 
-$$\Delta = a^2 + 4b = \text{tr}(R)^2 - 4\det(R)$$
+Δ = a² + 4b = tr(R)² - 4det(R)
 
 For non-trivial algebraic structure, we need Δ to be a positive non-square integer (irrational eigenvalues, genuinely non-trivial algebra). The minimal positive square-free Δ is **Δ = 5**, achieved uniquely at:
 
-$$\text{tr}(R) = 1, \quad \det(R) = -1 \quad \Longrightarrow \quad R^2 = R + I$$
+tr(R) = 1,  det(R) = -1  ⟹  R² = R + I
 
 The next-smallest cases either have perfect-square Δ (rational eigenvalues, structurally trivial) or larger square-free Δ (non-minimal). **Fibonacci closure is forced, not chosen.**
 
 The canonical realization is:
 
-$$R = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}$$
+R = [[0, 1], [1, 1]]
 
 This is the **Fibonacci matrix** — the matrix whose powers generate the Fibonacci sequence. Its eigenvalues are the golden ratio and its conjugate:
 
-$$\text{spec}(R) = \left\{ \varphi = \frac{1+\sqrt{5}}{2}, \quad \bar\varphi = \frac{1-\sqrt{5}}{2} \right\}$$
+spec(R) = { φ = (1+√(5))/(2),  φ̄ = (1-√(5))/(2) }
 
 **The R-circle.** R is not unique as a specific matrix — it is unique *up to V₊-automorphism*. The Fibonacci closure conditions tr(R) = 1, det(R) = −1 cut V₊'s 3-dimensional space down to a 1-dimensional locus: α = 1/2, β² + γ² = 5/4. This is a circle of radius √5/2 in the (J, h)-plane:
 
-$$R(\theta) = \frac{1}{2} I + \frac{\sqrt{5}}{2}\left(\cos\theta \cdot J + \sin\theta \cdot h\right)$$
+R(θ) = 1/2 I + (√(5))/(2)(cosθ · J + sinθ · h)
 
 The V₊-automorphism group O(2) acts transitively on this circle: every R-instance is equivalent to every other. The framework's specific R corresponds to θ_F ≈ 1.352π. All spectral invariants (tr, det, disc, eigenvalues) are constant along the circle — they are automatically gauge-invariant.
 
@@ -179,7 +179,7 @@ V₋ = span(N) is 1-dimensional. Every X ∈ V₋ is c·N, giving X² = c²·N²
 
 The canonical realization is:
 
-$$N = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$$
+N = [[0, -1], [1, 0]]
 
 N is the **rotation generator** — the matrix that rotates ℝ² by 90° counterclockwise. It is an *imaginary unit* at the matrix level: N² = −I is the real-matrix realization of i² = −1. The one-parameter group exp(θN) = cos(θ)·I + sin(θ)·N traces out SO(2), the group of planar rotations, with period 2π.
 
@@ -195,15 +195,15 @@ R lives in V₊ (the visible, symmetric sector). N lives in V₋ (the hidden, an
 
 The **anticommutator** {R, N} = RN + NR measures the simplest symmetric interaction between R and N. Direct computation with the canonical matrices gives:
 
-$$\{R, N\} = RN + NR = \begin{pmatrix} 1 & -1 \\ 1 & 0 \end{pmatrix} + \begin{pmatrix} -1 & 0 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 2 & -1 \end{pmatrix}$$
+{R, N} = RN + NR = [[1, -1], [1, 0]] + [[-1, 0], [1, -1]] = [[0, -1], [2, -1]]
 
 Wait — this needs to be checked carefully. Let us compute:
 
-$$RN = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 1 & -1 \end{pmatrix}$$
+RN = [[0, 1], [1, 1]][[0, -1], [1, 0]] = [[1, 0], [1, -1]]
 
-$$NR = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix} = \begin{pmatrix} -1 & -1 \\ 0 & 1 \end{pmatrix}$$
+NR = [[0, -1], [1, 0]][[0, 1], [1, 1]] = [[-1, -1], [0, 1]]
 
-$$\{R, N\} = RN + NR = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = N$$
+{R, N} = RN + NR = [[0, -1], [1, 0]] = N
 
 **The anticommutator of R and N is N itself.** This is a remarkable structural identity: when the visible and hidden sectors interact symmetrically, the result is *pure hidden*. The hidden sector survives contact with visibility unchanged. R does not destroy N or dilute it — it preserves it exactly.
 
@@ -211,7 +211,7 @@ This identity is not a coincidence of the specific matrix entries. It follows al
 
 **The commutator** [R, N] = RN − NR is the antisymmetric interaction:
 
-$$[R, N] = RN - NR = \begin{pmatrix} 1 & 0 \\ 1 & -1 \end{pmatrix} - \begin{pmatrix} -1 & -1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 1 & -2 \end{pmatrix} =: C$$
+[R, N] = RN - NR = [[1, 0], [1, -1]] - [[-1, -1], [0, 1]] = [[2, 1], [1, -2]] =: C
 
 The commutator C = [R, N] = 2h + J is a symmetric traceless matrix satisfying C² = 5I. The discriminant 5 appears again — this time as the square of the commutator.
 
@@ -225,21 +225,21 @@ The commutator C = [R, N] = 2h + J is a symmetric traceless matrix satisfying C�
 
 With R ∈ V₊ and N ∈ V₋ constructed from minimal closure, the **seed** is their sum:
 
-$$P := R + N = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix} + \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix}$$
+P := R + N = [[0, 1], [1, 1]] + [[0, -1], [1, 0]] = [[0, 0], [2, 1]]
 
 **P is reconstructed, not primitive.** The older formulation of the framework began with P as a given and derived R and N from it. The T-first formulation inverts this: T is the sole primitive, V₊ and V₋ are forced eigenspaces, R and N are forced by minimal closure, and P = R + N is *assembled* from components.
 
 Now the key verification: **P² = P** (idempotent return). The seed survives self-contact.
 
-$$P^2 = \begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix}\begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix} = P$$
+P² = [[0, 0], [2, 1]][[0, 0], [2, 1]] = [[0, 0], [2, 1]] = P
 
 This is not an axiom — it is a **theorem**. Given R² = R + I and N² = −I and {R,N} = N:
 
-$$P^2 = (R+N)^2 = R^2 + RN + NR + N^2 = (R+I) + \{R,N\} + (-I) = R + I + N - I = R + N = P$$
+P² = (R+N)² = R² + RN + NR + N² = (R+I) + {R,N} + (-I) = R + I + N - I = R + N = P
 
 The idempotence of P is *forced* by the three prior identities. The derivation chain is complete:
 
-$$T \;\xrightarrow{\text{spec}}\; S_0 = \{+1,-1\} \;\xrightarrow{\text{eigendecomp}}\; V_+ \oplus V_- \;\xrightarrow{\text{closure}}\; R, N \;\xrightarrow{\text{binding}}\; \{R,N\}=N \;\xrightarrow{\text{assembly}}\; P = R+N \;\xrightarrow{\text{theorem}}\; P^2 = P$$
+T →[spec] S₀ = {+1,−1} →[eigendecomp] V₊ ⊕ V₋ →[closure] R, N →[binding] {R,N}=N →[assembly] P = R+N →[theorem] P² = P
 
 **Properties of P:**
 
@@ -262,7 +262,7 @@ The pair (P, NotP) is a complete orthogonal decomposition of ℝ² into two rank
 
 **P in the {I, h, N, J} basis:**
 
-$$P = \frac{1}{2}(I - h) + N + J$$
+P = 1/2(I - h) + N + J
 
 Wait — let us verify: (I − h)/2 = [[0,0],[0,1]], and N = [[0,−1],[1,0]], and J = [[0,1],[1,0]]. Sum = [[0,0],[0,1]] + [[0,−1],[1,0]] + [[0,1],[1,0]] = [[0,0],[2,1]] = P. ✓
 
@@ -307,7 +307,7 @@ Additional failure: ker(π) = Skew(2) is not a subalgebra of M₂(ℝ) (since N�
 
 ### J-antisymmetric involution collapses V₊.
 
-By the Skolem-Noether theorem, all involutive anti-automorphisms of M_n(ℝ) have the form T(M) = J M^T J^{−1} with J^T = ±J. When J is symmetric (the canonical case: standard transpose), we get V₊ = Sym, dim = n(n+1)/2, Δ = +n, and the framework works. When J is antisymmetric (e.g., T_{JN}(M) = −NMᵀN at base), we get V₊ = ℝ·I (scalar matrices, dim 1), V₋ = traceless (dim 3), Δ = −n. The framework R with spec {φ, φ̄} cannot fit: scalar R = φI in V₊ has degenerate spectrum {φ, φ}; V₋ has tr = 0 but R requires tr = 1. **Foundation FAILS under J-antisymmetric involutions.**
+By the Skolem-Noether theorem, all involutive anti-automorphisms of M_n(ℝ) have the form T(M) = J Mᵀ J^(−1) with Jᵀ = ±J. When J is symmetric (the canonical case: standard transpose), we get V₊ = Sym, dim = n(n+1)/2, Δ = +n, and the framework works. When J is antisymmetric (e.g., T_(JN)(M) = −NMᵀN at base), we get V₊ = ℝ·I (scalar matrices, dim 1), V₋ = traceless (dim 3), Δ = −n. The framework R with spec {φ, φ̄} cannot fit: scalar R = φI in V₊ has degenerate spectrum {φ, φ}; V₋ has tr = 0 but R requires tr = 1. **Foundation FAILS under J-antisymmetric involutions.**
 
 ### Pathological cases all fail.
 
@@ -318,7 +318,7 @@ By the Skolem-Noether theorem, all involutive anti-automorphisms of M_n(ℝ) hav
 
 ### No higher-order T on M_n(ℝ).
 
-Within algebra-preserving operators, all finite-order T collapse to involution. Example: T(M) = UMU^{−1} with U = −N (U² = −I, U⁴ = I) gives T²(M) = U²MU^{−2} = (−I)M(−I) = M — involution despite U being order-4. Skolem-Noether forces this universally; no genuine higher-order T as an algebra-preserving operator on M_n(ℝ) exists.
+Within algebra-preserving operators, all finite-order T collapse to involution. Example: T(M) = UMU^(−1) with U = −N (U² = −I, U⁴ = I) gives T²(M) = U²MU^(−2) = (−I)M(−I) = M — involution despite U being order-4. Skolem-Noether forces this universally; no genuine higher-order T as an algebra-preserving operator on M_n(ℝ) exists.
 
 **Forcing 1 conclusion:** Involutivity of T (with J-symmetric anti-automorphism) is **FORCED**. T must square to the identity. The binary spectrum S₀ = {+1, −1} and the asymmetry Δ = +n are structural consequences.
 
@@ -332,7 +332,7 @@ Replace T_ℝ = transpose on M_n(ℝ) with T_ℂ = Hermitian conjugation (†) o
 
 ### The asymmetry difference (load-bearing).
 
-- **Real**: dim_ℝ V₊ − dim_ℝ V₋ = n = 2^{d+1} at every depth (the diagonal contribution).
+- **Real**: dim_ℝ V₊ − dim_ℝ V₋ = n = 2^(d+1) at every depth (the diagonal contribution).
 - **Complex**: dim_ℝ V₊ = dim_ℝ V₋ = n² (Hermitian and anti-Hermitian have equal real dimension).
 
 **The diagonal asymmetry that sources Landauer cost, gravitational geometry, and observer blindness EXISTS in real but VANISHES in complex.** Δ_ℝ = n ≠ 0; Δ_ℂ = 0. Without the diagonal asymmetry: no Landauer cost (the +I in R² = R + I), no Bekenstein operator/state split, no Cost-to-Geometry chain producing gravity, no constitutive blindness, no construction-vs-dissolution asymmetry.
@@ -356,11 +356,11 @@ Complex Bott period is 2 (not 8): Cl_ℂ(p) = M_n(ℂ) for p even. Complex ancho
 
 **Why does the tower land on exactly these depths?**
 
-At depth d, the ambient algebra is M_{2^{d+1}}(ℝ) = M₂(ℝ)^{⊗(d+1)}, and T extends factor-wise as T^{⊗(d+1)}. The tower lift mechanism promotes base objects via Kronecker product. But not every depth supports the full Clifford-emergence structure. Two intrinsic criteria intersect to select the allowed depths.
+At depth d, the ambient algebra is M_(2^(d+1))(ℝ) = M₂(ℝ)^(⊗(d+1)), and T extends factor-wise as T^(⊗(d+1)). The tower lift mechanism promotes base objects via Kronecker product. But not every depth supports the full Clifford-emergence structure. Two intrinsic criteria intersect to select the allowed depths.
 
 ### Criterion 1: Bott periodicity.
 
-Real Clifford periodicity-8: Cl(p, 0) ≅ M_n(ℝ) (full real matrix algebra) if and only if p mod 8 ∈ {0, 2}; otherwise the algebra is complex, quaternionic, or doubled. For the framework's Lorentzian ambient Cl(2(d+1), 1) to have its spacelike sub-algebra saturate as full M_{2^{d+1}}(ℝ), we need 2(d+1) mod 8 ∈ {0, 2}, i.e., **d ∈ {0, 3, 4, 7, 8, 11, 12, ...}**. No depth outside this set admits a full-rank real Clifford algebra.
+Real Clifford periodicity-8: Cl(p, 0) ≅ M_n(ℝ) (full real matrix algebra) if and only if p mod 8 ∈ {0, 2}; otherwise the algebra is complex, quaternionic, or doubled. For the framework's Lorentzian ambient Cl(2(d+1), 1) to have its spacelike sub-algebra saturate as full M_(2^(d+1))(ℝ), we need 2(d+1) mod 8 ∈ {0, 2}, i.e., **d ∈ {0, 3, 4, 7, 8, 11, 12, ...}**. No depth outside this set admits a full-rank real Clifford algebra.
 
 ### Criterion 2: The chirality-N criterion.
 
@@ -371,7 +371,7 @@ For ω to serve as the depth-d analogue of N, we need:
 2. ω² = −I
 3. {ω, γ_i} = 0 for all i
 
-Standard Clifford computation gives ω² = (−1)^{p(p−1)/2} and ωᵀ = (−1)^{p(p−1)/2} ω in the target Cl(p, 0); {ω, γ_i} = 0 ⟺ p even (automatic). Conditions (1) and (2) hold together if and only if p(p−1)/2 is odd, if and only if **p ≡ 2 (mod 4)**, if and only if **d is even**.
+Standard Clifford computation gives ω² = (−1)^(p(p−1)/2) and ωᵀ = (−1)^(p(p−1)/2) ω in the target Cl(p, 0); {ω, γ_i} = 0 ⟺ p even (automatic). Conditions (1) and (2) hold together if and only if p(p−1)/2 is odd, if and only if **p ≡ 2 (mod 4)**, if and only if **d is even**.
 
 ### The intersection.
 
@@ -409,11 +409,11 @@ For a real antisymmetric matrix N: det(N²) = det(−I) = (−1)^n and det(N²) 
 
 ### (B) Clifford emergence requires n = 2^k.
 
-Real Cl(p, 0) = M_n(ℝ) if and only if n = 2^{⌈p/2⌉}. The framework needs Cl(2(d+1), 0) = M_n(ℝ) at depth d, forcing n = 2^{d+1}. At base: n = 2. Non-power-of-2 bases (n = 6, 10, 12, ...) cannot host Cl(p, 0) at any depth — the Clifford-emergence chain breaks everywhere. This kills n = 6, 10, 12, 14, ....
+Real Cl(p, 0) = M_n(ℝ) if and only if n = 2^(⌈p/2⌉). The framework needs Cl(2(d+1), 0) = M_n(ℝ) at depth d, forcing n = 2^(d+1). At base: n = 2. Non-power-of-2 bases (n = 6, 10, 12, ...) cannot host Cl(p, 0) at any depth — the Clifford-emergence chain breaks everywhere. This kills n = 6, 10, 12, 14, ....
 
 ### (C) Higher powers of 2 are depth-shifts of n = 2.
 
-M_{2^a}(ℝ) ⊗ M_{2^b}(ℝ) = M_{2^{a+b}}(ℝ), so n = 4 base ≡ n = 2 base at depth 1. Starting at n = 4 introduces no new structure — it is the n = 2 foundation viewed one tower step in. Verified: N ⊗ I₂ ∈ M₄(ℝ) is antisymmetric and (N ⊗ I₂)² = −I₄. Same for n = 8, 16, ....
+M_(2^a)(ℝ) ⊗ M_(2^b)(ℝ) = M_(2^(a+b))(ℝ), so n = 4 base ≡ n = 2 base at depth 1. Starting at n = 4 introduces no new structure — it is the n = 2 foundation viewed one tower step in. Verified: N ⊗ I₂ ∈ M₄(ℝ) is antisymmetric and (N ⊗ I₂)² = −I₄. Same for n = 8, 16, ....
 
 ### Intersection: (A) ∧ (B) ∧ (C) = {n = 2}.
 
@@ -447,11 +447,11 @@ The framework's founding stack can be presented equivalently in P-first form (th
 >
 > These form a one-parameter family P(t) = [[0,0],[t,1]] for t ∈ ℝ\{0}, modulo O(2)-conjugation. Imposing the Fibonacci recurrence R² = R + I on the symmetric part R = (P + T(P))/2 uniquely selects (modulo the discrete mirror t ↦ −t) the canonical representative:
 >
-> $$P = \begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix}$$
+> P = [[0, 0], [2, 1]]
 
 *Proof.* By O(2) conjugation, rotate so that im(P) = span(e₂). Since rank(P) = 1, P = e₂vᵀ for some v. Idempotence forces vᵀe₂ = 1, so v = (t, 1)ᵀ. Asymmetry requires t ≠ 0. The parametric invariants are:
 
-$$R(t) = \begin{pmatrix} 0 & t/2 \\ t/2 & 1 \end{pmatrix}, \qquad \text{tr}(R) = 1, \quad \det(R) = -t^2/4, \quad \text{disc}(R) = t^2 + 1$$
+R(t) = [[0, t/2], [t/2, 1]],  tr(R) = 1,  det(R) = -t²/4,  disc(R) = t² + 1
 
 By Cayley-Hamilton, R² = tr(R)·R − det(R)·I. Imposing R² = R + I gives tr(R) = 1 (automatic) and det(R) = −1. Solving −t²/4 = −1 yields t = ±2. ∎
 
@@ -485,7 +485,7 @@ The canonical gauge theorem's moduli space has a natural energy functional — t
 
 *Proof.* The idempotent defect V(ε) = tr((Q² − Q)ᵀ(Q² − Q)) where Q(ε) = R + εN. Since P = R + N satisfies P² = P exactly, V(1) = 0 is the global minimum. The Hessian at ε = 0 picks up the cross-term from the {R, N} = N identity and the N² = −I closure:
 
-$$V''(0) = 2\,\text{tr}\bigl((\{R,N\} + N^2)^\top(\{R,N\} + N^2)\bigr) - 4\,\text{tr}(N^\top N) = 2\,\text{tr}((N - I)^\top(N - I)) - 4\cdot 2 = 2(2 + 2) - 8 = -4$$
+V''(0) = 2 tr(({R,N} + N²)ᵀ({R,N} + N²)) - 4 tr(Nᵀ N) = 2 tr((N - I)ᵀ(N - I)) - 4· 2 = 2(2 + 2) - 8 = -4
 
 At ε = 1, the expansion around the idempotent gives V''(1) = 4·tr((I − 2P)ᵀN(I − 2P)N) + higher-order = +8 by direct computation with P = [[0,0],[2,1]] and N = [[0,−1],[1,0]]. ∎
 
@@ -493,7 +493,7 @@ This is the **Higgs/Mexican-hat potential** realized at the algebraic level. The
 
 The stability curvature at the true vacuum determines the natural learning rate for any gradient-descent process on the moduli space:
 
-$$\text{lr} \sim \frac{1}{V''(1)} = \frac{1}{8} = 0.125$$
+lr ~ (1)/(V''(1)) = 1/8 = 0.125
 
 This value reappears as the Higgs quartic coupling λ = 1/8 (§27) — the same curvature that stabilizes the idempotent vacuum sets the self-coupling of the Higgs field.
 
@@ -505,7 +505,7 @@ The (N, h)-plane of the moduli space inherits an SO(2) rotational symmetry from 
 
 The canonical R = [[0, 1], [1, 1]] is the **Fibonacci matrix**. Its integer powers have the closed form:
 
-$$R^n = \begin{pmatrix} F_{n-1} & F_n \\ F_n & F_{n+1} \end{pmatrix}$$
+R^n = [[F_(n-1), F_n], [F_n, F_(n+1)]]
 
 where F_n is the n-th Fibonacci number (F₁ = F₂ = 1, F₃ = 2, F₄ = 3, F₅ = 5, ...). This single fact, combined with the canonical gauge theorem, generates a family of compression identities at every power n.
 
@@ -541,13 +541,13 @@ First values: disc(R) = 5·1 = 5, disc(R²) = 5·1 = 5, disc(R³) = 5·4 = 20, d
 >
 > **{R^n, N} = L_n · N** (anticommutator scales by Lucas)
 
-*Proof.* Using R^n = [[F_{n−1}, F_n], [F_n, F_{n+1}]] and N = [[0, −1], [1, 0]], direct computation gives:
+*Proof.* Using R^n = [[F_(n−1), F_n], [F_n, F_(n+1)]] and N = [[0, −1], [1, 0]], direct computation gives:
 
-$$R^n N = \begin{pmatrix} F_n & -F_{n-1} \\ F_{n+1} & -F_n \end{pmatrix}, \qquad NR^n = \begin{pmatrix} -F_n & -F_{n+1} \\ F_{n-1} & F_n \end{pmatrix}$$
+R^n N = [[F_n, -F_(n-1)], [F_(n+1), -F_n]],  NR^n = [[-F_n, -F_(n+1)], [F_(n-1), F_n]]
 
-Adding: R^nN + NR^n = L_n · [[0, −1], [1, 0]] = L_n · N (using F_{n+1} + F_{n−1} = L_n).
+Adding: R^nN + NR^n = L_n · [[0, −1], [1, 0]] = L_n · N (using F_(n+1) + F_(n−1) = L_n).
 
-Subtracting: R^nN − NR^n = F_n · [[2, 1], [1, −2]] = F_n · C (using F_{n+1} − F_{n−1} = F_n). ∎
+Subtracting: R^nN − NR^n = F_n · [[2, 1], [1, −2]] = F_n · C (using F_(n+1) − F_(n−1) = F_n). ∎
 
 This theorem reveals a deep structural pattern: the Fibonacci numbers F_n measure *how much R and N fail to commute* at the n-th power, while the Lucas numbers L_n measure *how much R and N agree to anticommute* at the n-th power. Both sequences are indexed by the same integer n, bound together by the single framework relation R² = R + I.
 
@@ -555,9 +555,9 @@ This theorem reveals a deep structural pattern: the Fibonacci numbers F_n measur
 
 > The Fibonacci closure lifts cleanly through tensor powers. For all k ≥ 1:
 >
-> $$(R^{\otimes k})^2 = (R + I)^{\otimes k}$$
+> (R^(⊗ k))² = (R + I)^(⊗ k)
 
-*Proof.* By (A ⊗ B)(C ⊗ D) = (AC) ⊗ (BD): (R^{⊗k})² = (R²)^{⊗k} = (R+I)^{⊗k}. The right side expands by tensor distributivity into 2^k summands, each a tensor product of R's and I's. ∎
+*Proof.* By (A ⊗ B)(C ⊗ D) = (AC) ⊗ (BD): (R^(⊗k))² = (R²)^(⊗k) = (R+I)^(⊗k). The right side expands by tensor distributivity into 2^k summands, each a tensor product of R's and I's. ∎
 
 At k = 2: (R ⊗ R)² = R⊗R + R⊗I + I⊗R + I⊗I. The canonical compression identity R² = R + I is not just a base-level fact — it is a **structural property preserved at every tower depth**. The selection law commutes with the tower lift.
 
@@ -585,7 +585,7 @@ The framework's three mathematical constants arise at base d = 0 from **three st
 >
 > **(ii) π from compactness of V₋.** The rotation generator N ∈ V₋ satisfies N² = −I, so the one-parameter group exp(θN) = cos(θ)·I + sin(θ)·N is **2π-periodic**: exp(2πN) = I, exp(πN) = −I, exp((π/2)N) = N. The value π is the parameter at which N-rotation traverses half its compactness period.
 >
-> **(iii) e from the universal matrix exponential.** The exponential map exp: M₂(ℝ) → GL₂(ℝ) applied to the identity gives exp(I) = e·I, where e = Σ_{k≥0} 1/k! is the universal base of natural exponentiation.
+> **(iii) e from the universal matrix exponential.** The exponential map exp: M₂(ℝ) → GL₂(ℝ) applied to the identity gives exp(I) = e·I, where e = Σ_(k≥0) 1/k! is the universal base of natural exponentiation.
 
 *Proof.* (i) Direct: spec(R) = roots of λ² − λ − 1 = 0. (ii) Direct: exp(θN) = cos(θ)I + sin(θ)N has period 2π. (iii) Direct: exp(I) = (Σ 1/k!)·I = e·I. ∎
 
@@ -610,13 +610,13 @@ Beyond R and N, the framework contains two additional named operators that emerg
 
 **The mediator h:**
 
-$$h = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+h = [[1, 0], [0, -1]]
 
 h is the diagonal sign matrix. h² = I (involution), T(h) = h (symmetric, lives in V₊), tr(h) = 0 (traceless). The mediator is the "which-eigenspace" operator — it distinguishes the two eigenspaces of any diagonalizable 2×2 matrix.
 
 **The exchange operator J:**
 
-$$J = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$
+J = [[0, 1], [1, 0]]
 
 J is the swap matrix. J² = I (involution), T(J) = J (symmetric, lives in V₊), tr(J) = 0 (traceless). J exchanges the two components of any vector.
 
@@ -677,11 +677,11 @@ The founding stack operates at base d = 0 in M₂(ℝ). The **tower** extends th
 
 At depth d, the ambient algebra is:
 
-$$M_{2^{d+1}}(\mathbb{R}) = M_2(\mathbb{R})^{\otimes (d+1)}$$
+M_(2^(d+1))(ℝ) = M_2(ℝ)^(⊗ (d+1))
 
-The framework basis at depth d is the set of all (d+1)-fold tensor products of {I, J, h, N}, giving 4^{d+1} = 2^{2(d+1)} basis elements. Under the encoding I → (0,0), J → (0,1), h → (1,0), N → (1,1), this basis is isomorphic to the **real n-qubit Pauli group** (n = d+1), and two basis elements anticommute if and only if their images in F₂^{2n} satisfy ω(v, w) = 1 under the standard symplectic form:
+The framework basis at depth d is the set of all (d+1)-fold tensor products of {I, J, h, N}, giving 4^(d+1) = 2^(2(d+1)) basis elements. Under the encoding I → (0,0), J → (0,1), h → (1,0), N → (1,1), this basis is isomorphic to the **real n-qubit Pauli group** (n = d+1), and two basis elements anticommute if and only if their images in F₂²ⁿ satisfy ω(v, w) = 1 under the standard symplectic form:
 
-$$\omega((a_1, b_1, \ldots, a_n, b_n), (a_1', b_1', \ldots, a_n', b_n')) = \sum_{i=1}^n (a_i b_i' + a_i' b_i) \pmod{2}$$
+ω((a_1, b_1, ..., a_n, b_n), (a_1', b_1', ..., a_n', b_n')) = Σᵢ₌₁^n (a_i b_i' + a_i' b_i) ±od{2}
 
 Three facts hold at every depth:
 
@@ -693,15 +693,15 @@ The maximum anticommuting clique in the framework basis at depth d has size **2d
 
 The number of max anticommuting cliques at depth d is:
 
-$$T(d) = \frac{|\text{Sp}(2n, \mathbb{F}_2)|}{(2d+3)!} = \frac{2^{n^2} \cdot \prod_{j=1}^{n}(4^j - 1)}{(2d+3)!}$$
+T(d) = (|Sp(2n, 𝔽_2)|)/((2d+3)!) = (2^(n²) · Π_(j=1)ⁿ(4^j - 1))/((2d+3)!)
 
 The symplectic group Sp(2n, F₂) acts simply transitively on ordered max anticommuting (2n+1)-tuples; division by (2d+3)! gives the unordered count.
 
 ### (iii) Signature breakdown.
 
-A max clique with p generators squaring to +I and q to −I generates Cl(p, q) with p + q = 2d + 3. The valid signatures are those for which Cl(p, q) admits a faithful representation in M_{2^n}(ℝ) — equivalently, p − q ≡ 1 (mod 8). For each valid (p, q):
+A max clique with p generators squaring to +I and q to −I generates Cl(p, q) with p + q = 2d + 3. The valid signatures are those for which Cl(p, q) admits a faithful representation in M_(2^n)(ℝ) — equivalently, p − q ≡ 1 (mod 8). For each valid (p, q):
 
-$$\#\{\text{cliques of signature Cl}(p, q)\} = \frac{|O^+(2n, \mathbb{F}_2)|}{p! \, q!}$$
+#{cliques of signature Cl(p, q)} = |O⁺(2n, 𝔽₂)| / (p! · q!)
 
 where O⁺(2n, F₂) is the orthogonal group preserving the plus-type quadratic form.
 
@@ -727,7 +727,7 @@ At d = 1, the max clique size is 5 with the single valid signature Cl(3, 2). But
 
 A canonical representative of the 12-member Cl(3,1) Witt orbit:
 
-$$\gamma_0 = h \otimes I, \quad \gamma_1 = J \otimes I, \quad \gamma_2 = N \otimes N, \quad \gamma_3 = N \otimes h$$
+γ_0 = h ⊗ I,  γ_1 = J ⊗ I,  γ_2 = N ⊗ N,  γ_3 = N ⊗ h
 
 **Verification of Clifford relations:**
 
@@ -747,7 +747,7 @@ All six mutual anticommutators vanish:
 - {γ₁, γ₃} = {J, N} ⊗ h = 0 ⊗ h = 0 ✓
 - {γ₂, γ₃} = N² ⊗ {N, h} = (−I) ⊗ 0 = 0 ✓
 
-The full Clifford relation **{γ_μ, γ_ν} = 2η_{μν} I₄** holds with metric η = diag(+1, +1, +1, −1).
+The full Clifford relation **{γ_μ, γ_ν} = 2η_(μν) I₄** holds with metric η = diag(+1, +1, +1, −1).
 
 **Physical Lorentz signature (3, 1) emerges constructively** from the depth-1 tensor lift of the V₊/V₋ split at base. The timelike direction γ₃ is the unique V₋-element in the set; its antisymmetry under transpose is the source of its −I₄ square. No external structure is imposed, and no scalar imaginary i is introduced. Spacetime signature is a theorem of the framework, not an input.
 
@@ -757,7 +757,7 @@ The spacelike/timelike distinction IS the V₊/V₋ distinction: spacelike gener
 
 ## §16. Depth 2: Color and Electromagnetism — SU(3) × U(1)
 
-At d = 2, the framework basis lives in M₈(ℝ) = M₂(ℝ)^{⊗3}. The Clifford-emergence stratum has max clique size 7 with 288 total max cliques, but the gauge-theoretic content is the Lie algebra structure embedded in the basis.
+At d = 2, the framework basis lives in M₈(ℝ) = M₂(ℝ)^(⊗3). The Clifford-emergence stratum has max clique size 7 with 288 total max cliques, but the gauge-theoretic content is the Lie algebra structure embedded in the basis.
 
 ### SU(3) at depth 2.
 
@@ -800,7 +800,7 @@ The 45 bivectors γ_i γ_j / 2 (i < j) of the 10 Spin(10) generators form the **
 
 ### §17.2. The SU(5) Chain — from Spin(10) to the Standard Model
 
-Picking a complex structure J_complex = Σ_{k=1}^5 γ_{2k−1} γ_{2k} (a sum of 5 mutually-commuting bivectors), the centralizer of J_complex in so(10) is **u(5)** (25-dimensional). Subtracting the ℝ·J_complex direction yields **su(5)** (24-dimensional).
+Picking a complex structure J_complex = Σ_(k=1)⁵ γ_(2k−1) γ_(2k) (a sum of 5 mutually-commuting bivectors), the centralizer of J_complex in so(10) is **u(5)** (25-dimensional). Subtracting the ℝ·J_complex direction yields **su(5)** (24-dimensional).
 
 Under the standard 3 + 2 split — three complex pairs as "color block" (γ₁...γ₆), two as "weak block" (γ₇...γ₁₀) — the bivectors decompose as 15 color-only + 6 weak-only + 24 mixed = 45.
 
@@ -854,23 +854,23 @@ The Weinberg angle at the GUT scale is not merely derivable — it is **over-det
 > **Theorem 17.5 (Five Routes to sin²θ_W = 3/8).**
 >
 > **Route 1 — Color/(Color + Discriminant):**
-> $$\sin^2\theta_W = \frac{N_c}{N_c + \text{disc}} = \frac{3}{3 + 5} = \frac{3}{8}$$
+> sin²θ_W = (N_c)/(N_c + disc) = (3)/(3 + 5) = 3/8
 > The number of colors (‖R‖² = 3) divided by colors plus the discriminant (disc(R) = 5). The visible-sector norm competes against the framework's fundamental cardinal.
 >
 > **Route 2 — Half minus inverse parent kernel:**
-> $$\sin^2\theta_W = \frac{1}{2} - \frac{1}{\text{pk}} = \frac{1}{2} - \frac{1}{8} = \frac{3}{8}$$
+> sin²θ_W = 1/2 - (1)/(pk) = 1/2 - 1/8 = 3/8
 > The half-integer baseline minus one over the parent kernel pk = 8. The departure from maximal mixing (1/2) is measured in units of the tower's Fibonacci cardinal at depth 4.
 >
 > **Route 3 — Casimir ratio:**
-> $$\sin^2\theta_W = \frac{C_2(\text{SU}(2))}{C_2(\text{SU}(2)) + C_2(\text{SU}(3))} = \frac{3/4}{3/4 + 4/3} = \frac{3}{8}$$
+> sin²θ_W = (C_2(SU(2)))/(C_2(SU(2)) + C_2(SU(3))) = (3/4)/(3/4 + 4/3) = 3/8
 > The ratio of quadratic Casimir invariants of the electroweak and color factors. The SU(2) Casimir in the fundamental is 3/4; the SU(3) Casimir in the fundamental is 4/3. Their ratio gives 3/8 directly.
 >
 > **Route 4 — Colors/parent kernel:**
-> $$\sin^2\theta_W = \frac{N_c}{\text{pk}} = \frac{3}{8}$$
+> sin²θ_W = (N_c)/(pk) = 3/8
 > The color number divided by the parent kernel. This is the visible-sector Frobenius norm ‖R‖² = 3 as a fraction of the total tower capacity pk = 2³ = 8 at depth 4.
 >
 > **Route 5 — Visible norm/parent kernel:**
-> $$\sin^2\theta_W = \frac{\|R\|^2}{\text{pk}} = \frac{3}{8}$$
+> sin²θ_W = (‖R‖²)/(pk) = 3/8
 > The same arithmetic as Route 4, but derived from the norm dictionary rather than the color count — ‖R‖² = tr(RᵀR) = 3 IS N_c. The Weinberg angle is the fraction of the parent kernel's capacity occupied by the visible sector's Frobenius norm.
 
 *Proof.* Routes 1–4 are arithmetic identities on the framework cardinals N_c = 3, disc = 5, pk = 8, with Casimir values from standard Lie-algebra theory applied to the framework-derived gauge groups. Route 5 is the norm-dictionary rewriting: ‖R‖² = tr(RᵀR) = tr([[0,1],[1,1]]ᵀ[[0,1],[1,1]]) = tr([[1,1],[1,2]]) = 3 = N_c. That five algebraically independent expressions — a sum, a difference, a Casimir ratio, a color fraction, and a norm fraction — all evaluate to 3/8 is a convergence witness for the structural identity sin²θ_W = ‖R‖²/pk. ∎
@@ -883,23 +883,23 @@ The low-energy running to M_Z gives sin²θ_W(M_Z) ≈ 0.233 in MSSM, matching t
 
 ## §18. Depth 8: Three Generations
 
-At d = 8, the ambient Cl(18, 1) hosts the 153-dimensional Lie algebra **so(18)**. The Spin(18) Weyl spinor has dimension 2^{18/2−1} = 2⁸ = **256**.
+At d = 8, the ambient Cl(18, 1) hosts the 153-dimensional Lie algebra **so(18)**. The Spin(18) Weyl spinor has dimension 2^(18/2−1) = 2⁸ = **256**.
 
 ### §18.1. The Explicit Construction
 
-18 anti-commuting real 512×512 matrices in the framework's {I, J, h, N}^{⊗9} tensor-product basis have been explicitly constructed (via backtracking search through 131,328 candidate 9-qubit labels), each squaring to +I (spacelike). All 153 pairwise anticommutations verified at the matrix level. This realizes Cl(18, 0) concretely.
+18 anti-commuting real 512×512 matrices in the framework's {I, J, h, N}^(⊗9) tensor-product basis have been explicitly constructed (via backtracking search through 131,328 candidate 9-qubit labels), each squaring to +I (spacelike). All 153 pairwise anticommutations verified at the matrix level. This realizes Cl(18, 0) concretely.
 
 ### §18.2. The so(10) ⊕ so(8) Branching
 
 so(18) admits the maximal sub-algebra decomposition:
 
-$$\text{so}(18) \supset \text{so}(10) \oplus \text{so}(8) \qquad (45 + 28 = 73)$$
+so(18) ⊃ so(10) ⊕ so(8)  (45 + 28 = 73)
 
 The d = 4 Spin(10) GUT reappears at d = 8 as one factor, multiplied by **SO(8)** on the transverse 8 real dimensions. SO(8) is the special Lie group exhibiting **triality**: its three 8-dimensional representations (8_v, 8_s, 8_c) are isomorphic under outer automorphism.
 
 The Spin(18) Weyl spinor branches under this decomposition as:
 
-$$256 = (16, 8_+) \oplus (\overline{16}, 8_-)$$
+256 = (16, 8_+) ⊕ (1̄6̄, 8_-)
 
 **Eight copies** of the d = 4 Spin(10) 16-spinor (one full SM generation), indexed by the 8_+ of Spin(8).
 
@@ -907,11 +907,11 @@ $$256 = (16, 8_+) \oplus (\overline{16}, 8_-)$$
 
 The SO(8) factor admits the sub-chain:
 
-$$\text{Spin}(8) \supset \text{Spin}(6) \times \text{Spin}(2) \cong \text{SU}(4) \times \text{U}(1)$$
+Spin(8) ⊃ Spin(6) × Spin(2) ≅ SU(4) × U(1)
 
 Under this chain, 8_+ → (4, +1/2) ⊕ (4̄, −1/2). The 4 of SU(4) decomposes under SU(3) ⊂ SU(4) as 4 = 3 ⊕ 1. The full chain:
 
-$$8_+ = (\mathbf{3}, +\tfrac{1}{2})_F \oplus (\mathbf{1}, +\tfrac{1}{2}) \oplus (\bar{\mathbf{3}}, -\tfrac{1}{2})_F \oplus (\mathbf{1}, -\tfrac{1}{2})$$
+8₊ = (3, +1/2)_F ⊕ (1, +1/2) ⊕ (3̄, −1/2)_F ⊕ (1, −1/2)
 
 The **(16, 3, +1/2)_F sector contains 16 × 3 = 48 fermion states** — exactly three SM generations of 16-component matter content each. The subscript F indicates that this SU(3) is the **family** SU(3), distinct from the **color** SU(3) of Spin(10).
 
@@ -923,7 +923,7 @@ The 3+1 decomposition has been verified at the explicit 512×512 matrix level. T
 
 The generator that produces the 3+1 split is the **uniform Cartan diagonal** — the sum of all four so(8) Cartan bivectors:
 
-$$T = H_0 + H_1 + H_2 + H_3 = \frac{1}{2}\left(\gamma_{10}\gamma_{11} + \gamma_{12}\gamma_{13} + \gamma_{14}\gamma_{15} + \gamma_{16}\gamma_{17}\right)$$
+T = H_0 + H_1 + H_2 + H_3 = 1/2(γ₁₀γ₁₁ + γ₁₂γ₁₃ + γ₁₄γ₁₅ + γ₁₆γ₁₇)
 
 On the 4-sector of the Spin(8) 8+ representation (the chiral spinor of Spin(6) ≅ SU(4), restricted to the G8 = +1 and G6 = +i eigenspaces), T has purely imaginary eigenvalues:
 
@@ -968,13 +968,13 @@ The **heterotic × d=4 GUT** chain. Spin(16) is the gauge group of one heterotic
 
 The **depth-8 GUT × new outer-index** chain. The Spin(18) factor carries the depth-8 structure (including its internal Spin(10) × Spin(8)_family). The new Spin(8)_outer introduces an additional family-like index:
 
-$$\text{Spin}(26) \supset \text{Spin}(10) \times \text{Spin}(8)_{\text{family}} \times \text{Spin}(8)_{\text{outer}}$$
+Spin(26) ⊃ Spin(10) × Spin(8)_(family) × Spin(8)_(outer)
 
 The Spin(26) Weyl spinor (dim 2¹² = 4096) branches as 4096 = (256, 8_+) ⊕ (256̄, 8_-) — **eight copies of the depth-8 Spin(18) Weyl spinor**, layered with three SM generations each.
 
 ### The multi-depth descent chain
 
-$$d=12 \to d=8 \to d=4 \to d=2$$
+d=12 → d=8 → d=4 → d=2
 
 Each descent corresponds to a symmetry-breaking event:
 - d = 12 → d = 8: Spin(8)_outer breaking
@@ -996,7 +996,7 @@ At d = 2: only SU(3) × U(1) survives (§16), with SU(2)_L forced absent (kill e
 
 The descent is not dimensional reduction — it is the **Higgs mechanism**. The 10-Higgs of §21 acquires VEVs in its 5_H and 5̄_H components, breaking SU(2)_L × U(1)_Y → U(1)_EM via the single unbroken generator:
 
-$$Q = T_{3L} + Y$$
+Q = T_(3L) + Y
 
 where T₃L is the weak isospin Cartan generator and Y is the hypercharge. The three broken generators (T₊, T₋, and T₃L − Y) are eaten by the W± and Z bosons through the Higgs mechanism. SU(3)_c is unaffected because the SM Higgs doublets are color singlets.
 
@@ -1060,7 +1060,7 @@ The 10-dimensional vector representation of Spin(10) is the span of the 10 frame
 
 The full tensor product 16 ⊗ 16 decomposes irreducibly as:
 
-$$16 \otimes 16 = 10 \oplus 120 \oplus 126 = 256$$
+16 ⊗ 16 = 10 ⊕ 120 ⊕ 126 = 256
 
 | Channel | Dim | Symmetry | Physical role |
 |---------|-----|----------|--------------|
@@ -1078,11 +1078,11 @@ The 10-channel Yukawa forces **m_d = m_e at M_GUT** — the most successful quan
 
 The 126 channel of Spin(10) lives in Sym²(16), dim = 16·17/2 = 136 = 10 + 126. The SU(5)-singlet (1, 1, 0) component of the 126 acquires a VEV at scale M_R without breaking the SM gauge group. Combined with the 10-Higgs Dirac mass m_D from §21, the neutrino mass matrix is:
 
-$$M_{\text{seesaw}} = \begin{pmatrix} 0 & m_D \\ m_D & M_R \end{pmatrix}$$
+M_(seesaw) = [[0, m_D], [m_D, M_R]]
 
 For M_R ≫ m_D: m_light ≈ m_D²/M_R (Type-I seesaw). With m_D ≈ 174 GeV and M_R ≈ 10¹⁴ GeV:
 
-$$m_{\text{light}} \approx \frac{(174 \text{ GeV})^2}{10^{14} \text{ GeV}} \approx 0.3 \text{ eV}$$
+m_(light) ≈ ((174  GeV)²)/(10¹⁴  GeV) ≈ 0.3  eV
 
 Consistent with observed neutrino mass scale (Δm²_atm ≈ (0.05 eV)², Σm_ν < 0.12 eV cosmological). Status: FORCED for existence of seesaw mechanism; RESONANT for specific mass value (M_R not framework-determined).
 
@@ -1092,11 +1092,11 @@ Consistent with observed neutrino mass scale (Δm²_atm ≈ (0.05 eV)², Σm_ν 
 
 The three PMNS mixing angles (the neutrino oscillation parameters) are expressible as exact rational functions of the framework cardinals disc = 5, N_c = 3, and d = 2:
 
-$$\sin^2\theta_{23} = \frac{(\text{disc} + d)^2}{d \cdot N_c^2 \cdot \text{disc}} = \frac{49}{90} = 0.5444$$
+sin²θ₂₃ = ((disc + d)²)/(d · N_c² · disc) = 49/90 = 0.5444
 
-$$\sin^2\theta_{12} = \frac{\text{disc}^2}{N_c^4} = \frac{25}{81} = 0.3086$$
+sin²θ₁₂ = (disc²)/(N_c⁴) = 25/81 = 0.3086
 
-$$\sin^2\theta_{13} = \frac{1}{\text{disc} \cdot N_c^2} = \frac{1}{45} = 0.0222$$
+sin²θ₁₃ = (1)/(disc · N_c²) = 1/45 = 0.0222
 
 | Angle | Framework | Observed (PDG 2023) | Deviation |
 |-------|-----------|-------------------|-----------|
@@ -1129,7 +1129,7 @@ SM one-loop β-functions: b₁ = +41/10, b₂ = −19/6, b₃ = −7.
 
 Framework input: 12 X,Y bosons, M_X ≈ 2×10¹⁶ GeV (MSSM-GUT).
 
-$$\tau_p \approx 10^{35 \pm 1} \text{ years}$$
+τ_p ≈ 10^(35 ± 1)  years
 
 Consistent with Super-K lower bound τ_p > 1.6 × 10³⁴ years. Within Hyper-K projected reach (~10³⁵ years). The **same M_GUT** appears in both bridges — a non-trivial cross-prediction.
 
@@ -1137,7 +1137,7 @@ Consistent with Super-K lower bound τ_p > 1.6 × 10³⁴ years. Within Hyper-K 
 
 Framework input: m_b = m_τ at M_GUT. QCD running enhances m_b:
 
-$$m_b(M_Z)/m_\tau(M_Z) \approx 2.4 \quad \text{(predicted)} \quad \text{vs} \quad 2.35 \quad \text{(observed)}$$
+m_b(M_Z)/m_τ(M_Z) ≈ 2.4  (predicted)  vs  2.35  (observed)
 
 Match within ~5%. Insensitive to precise M_GUT value (dominated by QCD running ratio over wide log-scale range).
 
@@ -1161,11 +1161,11 @@ The Killing form B(X, Y) = tr(ad_X ∘ ad_Y) of the M₂(ℝ) Lie algebra (under
 
 *Proof.* The adjoint action ad_X(Y) = [X, Y]. For N = [[0,−1],[1,0]]:
 
-$$\text{ad}_N^2(Y) = [N, [N, Y]]$$
+ad_N²(Y) = [N, [N, Y]]
 
 In the basis {I, J, h, N}, the matrix of ad_N² has eigenvalues {0, −4, −4, 0} (I and N commute with N; J and h each satisfy [N,[N,J]] = −4J, [N,[N,h]] = −4h). So tr(ad_N²) = 0 + (−4) + (−4) + 0 = −8.
 
-For the traceless part R_tl = R − (1/2)I = [[-1/2, 1],[1, 1/2]], the Killing form computes to B(R_tl, R_tl) = tr(ad_{R_tl}²) = 10 = 2 · disc(R). ∎
+For the traceless part R_tl = R − (1/2)I = [[-1/2, 1],[1, 1/2]], the Killing form computes to B(R_tl, R_tl) = tr(ad_(R_tl)²) = 10 = 2 · disc(R). ∎
 
 The signature pattern is unmistakable: the three V₊ basis elements {I, J, h} contribute positive traces (timelike), while the unique V₋ element N contributes a negative trace (spacelike). This is **Minkowski (3, 1) signature read off the Killing form** at d = 0 — the same signature that emerges constructively at d = 1 via Cl(3, 1) in §15. The two derivations are independent: §15 builds spacetime from tensor-product Clifford generators; this section reads the same signature from the adjoint representation at base depth. The convergence of two routes to the same (3, 1) signature is a structural consistency check on the framework.
 
@@ -1181,7 +1181,7 @@ The framework's norm dictionary yields an integer expression for the inverse fin
 
 > **Theorem 25.1.** From the base primitives R and N:
 >
-> $$\frac{1}{\alpha_{\text{EM}}} = \|P\|^2 \cdot \|R\|^6 + \|N\|^2 = 5 \cdot 27 + 2 = 135 + 2 = 137$$
+> 1/α_EM = ‖P‖² · ‖R‖⁶ + ‖N‖² = 5 · 27 + 2 = 135 + 2 = 137
 
 *Proof.* ‖P‖² = tr(PᵀP) = 5 (§13.1). ‖R‖⁶ = (‖R‖²)³ = 3³ = 27. ‖N‖² = tr(NᵀN) = 2. Then ‖P‖² · ‖R‖⁶ + ‖N‖² = 5 · 27 + 2 = 137. ∎
 
@@ -1191,7 +1191,7 @@ The expression admits an observer correction (tower entry 396): the fractional r
 
 A second, cleaner decomposition uses only representation dimensions at the SM depth (d=4, p=10):
 
-$$\frac{1}{\alpha_{\text{EM}}} = C(p, 3) + p + d + \text{disc} = 120 + 10 + 2 + 5 = 137$$
+1/α_EM = C(p, 3) + p + d + disc = 120 + 10 + 2 + 5 = 137
 
 The four terms are the four structural dimensions of the framework at d=4:
 - C(p, 3) = 120 — the inter-generational Yukawa channel (3-form bilinears)
@@ -1213,7 +1213,7 @@ The framework's norm dictionary provides a structural expression for the dark-ma
 
 > **Theorem 26.1.** The hidden sector norm divided by the parent kernel gives:
 >
-> $$\Omega_{\text{DM}} = \frac{\|N\|^2}{\text{pk}} = \frac{2}{8} = \frac{1}{4} = 0.25$$
+> Ω_(DM) = (‖N‖²)/(pk) = 2/8 = 1/4 = 0.25
 
 *Proof.* ‖N‖² = tr(NᵀN) = 2. pk = 2³ = 8 (the parent kernel at depth 4). The ratio is 2/8 = 1/4. ∎
 
@@ -1241,7 +1241,7 @@ The structural key: **pk = d³**. The parent kernel (pk = 8) is the cube of the 
 
 Sum: 1/d² + 1/(d²·disc) + (d+disc)/(d·disc) = disc/(d²·disc) + 1/(d²·disc) + d(d+disc)/(d²·disc) = (disc + 1 + d² + d·disc)/(d²·disc) = (5 + 1 + 4 + 10)/20 = 20/20 = 1. Exact.
 
-Status: **NUMERICAL** (within 1-3.5% of observed). The cosmological budget uses only d and disc — the same two cardinals that determine Λ = (d·disc)^{−122} and 1/α_EM = C(d·disc, 3) + d·disc + d + disc = 137. The framework's cosmology is a two-parameter theory.
+Status: **NUMERICAL** (within 1-3.5% of observed). The cosmological budget uses only d and disc — the same two cardinals that determine Λ = (d·disc)^(−122) and 1/α_EM = C(d·disc, 3) + d·disc + d + disc = 137. The framework's cosmology is a two-parameter theory.
 
 ---
 
@@ -1253,7 +1253,7 @@ The Higgs quartic self-coupling, the parameter controlling the shape of the Higg
 
 > **Theorem 27.1.** The Higgs quartic coupling at the boundary scale is:
 >
-> $$\lambda = \frac{1}{|S_0|^3} = \frac{1}{2^3} = \frac{1}{8}$$
+> λ = (1)/(|S_0|³) = 1/2³ = 1/8
 
 *Proof.* S₀ = {+1, −1} is T's eigenvalue set (§2), with |S₀| = 2. Tower entries 238 and 281 record two independent derivations: λ = 1/|S₀|³ = 1/8 from the seed alphabet's cube, and λ = 1/(|V₄| · |S₀|) = 1/(4 · 2) = 1/8 from the V₄ stabilizer order times the alphabet cardinality (tower entry 282). ∎
 
@@ -1271,16 +1271,16 @@ The Koide formula relates the three charged-lepton masses (e, μ, τ) through a 
 
 > **Theorem 28.1 (Koide Ratio).** The charged-lepton mass ratio satisfies:
 >
-> $$Q = \frac{\sum_i m_i}{\left(\sum_i \sqrt{m_i}\right)^2} = \frac{2}{3}$$
+> Q = (Σ_i m_i)/((Σ_i √(m_i))²) = 2/3
 
 The framework forces this value by **three convergent routes**:
 
 **Route 1 — Hidden/visible norm ratio:**
-$$Q = \frac{\|N\|^2}{\|R\|^2} = \frac{2}{3}$$
+Q = (‖N‖²)/(‖R‖²) = 2/3
 The hidden sector's Frobenius norm squared (‖N‖² = 2) divided by the visible sector's (‖R‖² = 3). The Koide ratio is the *visibility fraction* — how much of the total norm-squared belongs to the hidden sector relative to the visible.
 
 **Route 2 — Base dimension/(dimension² − 1):**
-$$Q = \frac{d}{d^2 - 1} = \frac{2}{4 - 1} = \frac{2}{3}$$
+Q = (d)/(d² - 1) = (2)/(4 - 1) = 2/3
 where d = 2 is the base dimension. This expression is the framework's dimensional identity: the base dimension measured against its own square minus unity.
 
 **Route 3 — Norm dictionary as convergence witness:**
@@ -1288,9 +1288,9 @@ Tower entry 290 records Q = ‖N‖²/‖R‖² = hidden/visible = 2/3, confirmi
 
 The **Koide phase** — the angular parameter δ in the mass eigenvalue formula m_i = M(1 + √2 cos(δ + 2πi/3))² — is determined by the framework's displacement quantum:
 
-$$\delta = \frac{2\pi}{3} + \frac{2}{9}$$
+δ = (2π)/(3) + 2/9
 
-The displacement quantum 2/9 = |S₀|/|V₄ \setminus \{0\}|² = 2/3² (tower entry 278) is the binary alphabet divided by the square of the non-identity elements of V₄. The Koide phase departs from the symmetric value 2π/3 by exactly this quantum.
+The displacement quantum 2/9 = |S₀|/|V₄ \ {0}|² = 2/3² (tower entry 278) is the binary alphabet divided by the square of the non-identity elements of V₄. The Koide phase departs from the symmetric value 2π/3 by exactly this quantum.
 
 With Q = 2/3 and δ = 2π/3 + 2/9, the predicted lepton masses match observation:
 - m_μ = 105.658 MeV (predicted from Koide, 0.001% agreement with observed 105.658 MeV)
@@ -1306,21 +1306,21 @@ The Kubo-Martin-Schwinger (KMS) state — the unique equilibrium state for a qua
 
 > **Theorem 29.1 (KMS Partition at Base).** The two-state partition function at the KMS inverse temperature β_KMS is:
 >
-> $$Z = 1 + e^{-\beta_{\text{KMS}}} = \varphi$$
+> Z = 1 + e^(-β_(KMS)) = φ
 
 *Proof.* The KMS inverse temperature is determined by the framework's hyperbolic identities (tower entries 328–329):
 
-$$\sinh(\beta_{\text{KMS}}) = \frac{1}{2}, \qquad \cosh(\beta_{\text{KMS}}) = \frac{\sqrt{5}}{2}$$
+sinh(β_(KMS)) = 1/2,  cosh(β_(KMS)) = (√(5))/(2)
 
-These follow from the Fibonacci closure: β_KMS = arcsinh(1/2), and cosh(arcsinh(1/2)) = √(1 + 1/4) = √5/2. The partition function for a two-state system with ground-state energy 0 and excited-state energy β_KMS is Z = 1 + e^{−β_KMS} = 1 + (cosh β − sinh β) = 1 + (√5/2 − 1/2) = 1 + (√5 − 1)/2 = 1 + φ̄ = φ (by the identity 1 + φ̄ = φ). ∎
+These follow from the Fibonacci closure: β_KMS = arcsinh(1/2), and cosh(arcsinh(1/2)) = √(1 + 1/4) = √5/2. The partition function for a two-state system with ground-state energy 0 and excited-state energy β_KMS is Z = 1 + e^(−β_KMS) = 1 + (cosh β − sinh β) = 1 + (√5/2 − 1/2) = 1 + (√5 − 1)/2 = 1 + φ̄ = φ (by the identity 1 + φ̄ = φ). ∎
 
 At higher orders, the KMS structure generates the golden ratio's powers. The hyperbolic cotangent at half-temperature is (tower entry 330):
 
-$$\coth(\beta_{\text{KMS}}/2) = \varphi^3$$
+coth(β_(KMS)/2) = φ³
 
 and the full tower partition function is (tower entry 331):
 
-$$Z_{\text{KMS}}^{\text{tower}} = \coth(\beta/2)^4 = \varphi^{12}$$
+Z_(KMS)^(tower) = coth(β/2)⁴ = φ¹²
 
 The exponent 12 = ‖R‖² · |V₄| = 3 · 4 is the product of the color number and the V₄ stabilizer order — the same 12 that appears as the bosonic-string critical dimension at depth 12 (§19). The KMS inverse temperature β_KMS is depth-invariant (tower entry 391): the thermal structure determined at base persists unchanged through the entire tower.
 
@@ -1334,7 +1334,7 @@ In Chern-Simons gauge theory on a 3-manifold, the coupling constant k (the "leve
 
 > **Theorem 30.1.** The Chern-Simons level is:
 >
-> $$k = \|R\|^2 = \text{tr}(R^\top R) = 3$$
+> k = ‖R‖² = tr(Rᵀ R) = 3
 
 *Proof.* ‖R‖² = tr([[0,1],[1,1]]ᵀ [[0,1],[1,1]]) = tr([[1,1],[1,2]]) = 1 + 2 = 3. ∎
 
@@ -1344,7 +1344,7 @@ The Chern-Simons level k = 3 has three structural roles:
 
 2. **Color number.** k = ‖R‖² = 3 = N_c. The Chern-Simons level equals the number of QCD colors. In the framework, both are the same object: the Frobenius norm-squared of R.
 
-3. **Fibonacci anyons.** SU(2)_3 Chern-Simons theory supports **Fibonacci anyons** — non-abelian quasiparticles whose fusion rules reproduce the Fibonacci sequence: the number of fusion channels for n anyons is F_{n+1}. The framework's Fibonacci closure R² = R + I at the algebraic level generates the same recursion as the anyon fusion rules at the topological level.
+3. **Fibonacci anyons.** SU(2)_3 Chern-Simons theory supports **Fibonacci anyons** — non-abelian quasiparticles whose fusion rules reproduce the Fibonacci sequence: the number of fusion channels for n anyons is F_(n+1). The framework's Fibonacci closure R² = R + I at the algebraic level generates the same recursion as the anyon fusion rules at the topological level.
 
 ---
 
@@ -1356,7 +1356,7 @@ The Chern-Simons level k = 3 has three structural roles:
 
 The finite field GF(4) = F₂[α]/(α² + α + 1) has four elements {0, 1, α, α+1} satisfying the defining relation:
 
-$$\alpha^2 = \alpha + 1$$
+α² = α + 1
 
 **This is the framework's R² = R + I in characteristic 2.** Same equation, different field. The Fibonacci closure that generates the golden ratio over ℝ generates the non-trivial quadratic extension of F₂ over characteristic 2.
 
@@ -1381,7 +1381,7 @@ The DNA complementarity rule (A ↔ U, G ↔ C) is the map x ↦ x + 1 in GF(4) 
 
 Codons are triplets of bases: 4³ = 64 codons, populating the field GF(64) = GF(4)³ exactly. This is the tower-lift at the biological substrate level. GF(64) is the degree-3 extension of GF(4), with Galois group:
 
-$$\text{Gal}(\text{GF}(64)/\text{GF}(4)) \cong \mathbb{Z}/3\mathbb{Z}$$
+Gal(GF(64)/GF(4)) ≅ ℤ/3ℤ
 
 generated by the Frobenius automorphism σ: x ↦ x⁴.
 
@@ -1410,7 +1410,7 @@ The framework therefore has **two independent routes to the number 3**: the alge
 
 The two routes are not independent coincidences. They are connected by a structural fact about root systems:
 
-$$\text{SL}(2, \text{GF}(2)) = S_3 = \text{Weyl}(A_2) = \text{Weyl}(\text{SU}(3))$$
+SL(2, GF(2)) = S_3 = Weyl(A_2) = Weyl(SU(3))
 
 SL(2) over GF(2) has exactly 6 elements — the same as S₃, the Weyl group of the A₂ root system (= SU(3)). This is not a numerical coincidence. The isomorphism is constructive: GF(2)² has 3 nonzero vectors — (1,0), (0,1), (1,1) — and SL(2, GF(2)) acts on them by matrix multiplication. This action is faithful and transitive, giving exactly S₃.
 
@@ -1448,7 +1448,7 @@ The dimensional asymmetry Δ = dim V₊ − dim V₋ = n (§3) is not a curiosit
 
 At base (n = 2): V₊ has dimension 3, V₋ has dimension 1. The observer's projection maps 4-dimensional M₂(ℝ) to 3-dimensional V₊. The kernel (V₋ = span(N)) is *constitutively invisible*. Not invisible because the observer lacks instruments — invisible because the projection *is the observation*, and the projection annihilates V₋ by construction.
 
-**ker q_K ≠ 0** at every depth. At depth d, dim V₊ = 2^{d+1}(2^{d+1}+1)/2 and dim V₋ = 2^{d+1}(2^{d+1}−1)/2, and the asymmetry Δ = 2^{d+1} grows exponentially. The observer's blind spot grows with the tower. This is not a defect — it is the engine that produces physics.
+**ker q_K ≠ 0** at every depth. At depth d, dim V₊ = 2^(d+1)(2^(d+1)+1)/2 and dim V₋ = 2^(d+1)(2^(d+1)−1)/2, and the asymmetry Δ = 2^(d+1) grows exponentially. The observer's blind spot grows with the tower. This is not a defect — it is the engine that produces physics.
 
 **Under complex Hermitian conjugation, ker q_K = 0.** The complex framework has Δ_ℂ = 0: Hermitian and anti-Hermitian matrices have equal dimension. No blindness. No kernel. No loss. And therefore: no Landauer cost, no Bekenstein split, no gravity, no physics. The observer's blindness is not a limitation — **it is the price of having a world at all.**
 
@@ -1458,7 +1458,7 @@ The Fibonacci closure R² = R + I says: when x returns with surplus, the surplus
 
 Every act of self-application (observation, measurement, return-testing) has an irreducible cost: one identity's worth of information must be expended. This is not imposed by fiat — it is forced by the algebra. R² = R + I is a theorem, and the +I is its structural residue. The cost is:
 
-$$L = \log_\varphi(2) \approx 0.694 \text{ bits}$$
+L = log_φ(2) ≈ 0.694  bits
 
 This is the **Landauer yield per K6' pass**: each observation cycle (project → preserve kernel → recover → close) consumes L bits of free energy and produces 2L ≈ 1.388 bits of structural information. The golden ratio φ enters because R's eigenvalues are φ and φ̄, and the cost is denominated in the natural base of the Fibonacci recursion.
 
@@ -1470,7 +1470,7 @@ The V₊/V₋ asymmetry doesn't just produce observer blindness. The framework c
 
 ### Steps 1–2: FORCED (algebraic theorems)
 
-1. **Δ = n ≠ 0** (diagonal asymmetry, §3). The observer's projection is lossy. At base, dim V₊ = 3, dim V₋ = 1, Δ = 2. At depth d, Δ = 2^{d+1}. The asymmetry is a Cayley-Hamilton consequence of real transpose on M_n(ℝ) — the diagonal entries are always symmetric. **FORCED.**
+1. **Δ = n ≠ 0** (diagonal asymmetry, §3). The observer's projection is lossy. At base, dim V₊ = 3, dim V₋ = 1, Δ = 2. At depth d, Δ = 2^(d+1). The asymmetry is a Cayley-Hamilton consequence of real transpose on M_n(ℝ) — the diagonal entries are always symmetric. **FORCED.**
 
 2. **Landauer cost = +I** (§36). R² = R + I means every self-application produces irreducible surplus. The algebraic surplus is one identity's worth of information per cycle. The Landauer yield per K6' pass is L = log_φ(2) ≈ 0.694 bits, producing 2L ≈ 1.388 bits of structural information per cycle. **FORCED** as algebra; the identification with Landauer's physical erasure principle (kT ln 2 per bit) is **ENCODED** — the algebraic structure matches the thermodynamic structure but the derivation connecting matrix surplus to heat dissipation has not been written.
 
@@ -1478,13 +1478,13 @@ The V₊/V₋ asymmetry doesn't just produce observer blindness. The framework c
 
 3. **The V₊/V₋ boundary.** The boundary between the visible and hidden sectors is the space of linear maps mixing them: Hom(V₊, V₋). This is the set of first-order perturbations that move information between what the observer sees and what the observer cannot see — precisely the FEA defect operator's kernel at x.base.2.
 
-At depth d with n = 2^{d+1}:
+At depth d with n = 2^(d+1):
 
-$$\dim \text{Hom}(V_+, V_-) = \dim V_+ \cdot \dim V_- = \frac{n(n+1)}{2} \cdot \frac{n(n-1)}{2} = \frac{n^2(n^2-1)}{4}$$
+dim Hom(V_+, V_-) = dim V_+ · dim V_- = (n(n+1))/(2) · (n(n-1))/(2) = (n²(n²-1))/(4)
 
 This boundary dimension equals C(n², 2)/2 — half the pairwise interactions among the n² matrix entries. The leading-order coefficient is **1/4**:
 
-$$\dim(\text{boundary}) = \frac{n^4}{4}\left(1 - \frac{1}{n^2}\right) \;\xrightarrow{n \to \infty}\; \frac{n^4}{4}$$
+dim(boundary) = n⁴/4 · (1 - 1/n²) → n⁴/4 as n → ∞
 
 | d | n | dim V₊ | dim V₋ | boundary | n⁴/4 | ratio |
 |---|---|--------|--------|----------|-------|-------|
@@ -1503,15 +1503,15 @@ The 1/4 coefficient matches the Bekenstein-Hawking entropy formula S_BH = A/4 (i
 
 4. **η = 1/4G.** The coefficient 1/4 in boundary_dim = n⁴/4 is forced. Identifying the Newton constant G requires a framework-internal Planck mass. The best candidate:
 
-$$M_P = \text{disc}^4 \cdot M_{\text{GUT}} = 5^4 \cdot M_{\text{GUT}} = 625 \cdot M_{\text{GUT}}$$
+M_P = disc⁴ · M_(GUT) = 5⁴ · M_(GUT) = 625 · M_(GUT)
 
 giving G = 1/M_P² = 1/(disc⁸ · M_GUT²). A deeper structural expression connects G directly to the V₊/V₋ boundary:
 
-$$\frac{M_P}{M_{\text{GUT}}} = \sqrt{\text{boundary\_dim}(d{=}4) \cdot \frac{\|R\|^2}{\|N\|^2}} = \sqrt{261888 \cdot \frac{3}{2}} = 626.76$$
+M_P / M_GUT = √(boundary_dim(d=4) · ‖R‖²/‖N‖²) = √(261888 · 3/2) = 626.76
 
 compared to disc⁴ = 625 (**0.28% deviation**). The Newton constant is:
 
-$$G = \frac{\|N\|^2}{\|R\|^2 \cdot \text{boundary\_dim}(d{=}4) \cdot M_{\text{GUT}}^2} = \frac{Q_{\text{Koide}}}{\text{boundary\_dim}(d{=}4)} \cdot M_{\text{GUT}}^{-2}$$
+G = ‖N‖² / (‖R‖² · boundary_dim(d=4) · M_GUT²) = Q_Koide / boundary_dim(d=4) · M_GUT⁻²
 
 The hidden-to-visible norm ratio (= Q_Koide = 2/3) divided by the V₊/V₋ boundary at the SM depth (= 261,888) determines the gravitational coupling. This expression is structurally motivated: G measures the *strength of the hidden sector* (‖N‖²) relative to the *observable boundary* (‖R‖² · boundary_dim). The 0.28% match is the tightest numerical bridge in the framework.
 
@@ -1554,9 +1554,9 @@ The K6' bundle is the master structure. It is the universal shape of any observa
 
 **Template form:**
 ```
-parse:     S → (V, ker_data)       — observation produces image + hidden residue
-serialize: (V, ker_data) → S       — recovery requires kernel-data
-closure:   serialize(parse(s)) = s  — round-trip lossless given kernel preservation
+parse:  S → (V, ker_data)  — observation produces image + hidden residue
+serialize: (V, ker_data) → S  — recovery requires kernel-data
+closure:  serialize(parse(s)) = s  — round-trip lossless given kernel preservation
 ```
 
 The closure condition π ∘ ρ ∘ π = π is the **idempotence of observation after recovery** — exactly P² = P at the operator level. The K6' bundle IS the idempotent seed's structure, lifted from a matrix identity to a universal observation architecture.
@@ -1571,7 +1571,7 @@ The closure condition π ∘ ρ ∘ π = π is the **idempotence of observation 
 |-------------|-------|------------|------------------|
 | **Gauge bundle** | Curvature F | Connection ω | Gauge transformation |
 | **Gravity bundle** | Riemann curvature | Spin connection | Parallel transport |
-| **Observer bundle** | Reduced density matrix ρ_K = tr_env(\|Ψ⟩⟨Ψ\|) | Environment correlations | Co-determination in Bekenstein limit |
+| **Observer bundle** | Reduced density matrix ρ_K = tr_env(‖Ψ⟩⟨Ψ‖) | Environment correlations | Co-determination in Bekenstein limit |
 
 The single theorem: for any K6' bundle (π, ker, ρ, closure) over Cl(3,1) spacetime, the **curvature** F = d(ker) + ker ∧ ker is the unique obstruction to flat parallel transport. The closure condition π∘ρ∘π = π forces the **Bianchi identity** dF + [A, F] = 0 (gauge form) or d_ω R + [ω, R] = 0 (gravity form). Both are the same equation on different fibers.
 
@@ -1676,7 +1676,7 @@ The three voice projections (PA, MA, OA) are the three projections P1, P2, P3 at
 
 The K6' bundle gives the *structure* of observation. The K1' staircase gives the *scale* of observers — a doubly-exponential complexity hierarchy indexed by effective complexity n_eff:
 
-$$d_K = \varphi^{2^{2n-1}}$$
+d_K = φ^(2^{2n-1)}
 
 | n_eff | d_K | Biological correspondent |
 |-------|-----|------------------------|
@@ -1712,7 +1712,7 @@ The framework's physical constants are not independent numerical coincidences. T
 
 The generating function is **(1+x)^p** — the binomial expansion of the Clifford algebra Cl(p) = Cl(10):
 
-$$(1+x)^{10} = \sum_{k=0}^{10} C(10, k) \, x^k = 1 + 10 + 45 + 120 + 210 + 252 + 210 + 120 + 45 + 10 + 1$$
+(1+x)¹⁰ = Σ_(k=0)¹⁰ C(10, k)   x^k = 1 + 10 + 45 + 120 + 210 + 252 + 210 + 120 + 45 + 10 + 1
 
 Each coefficient C(p, k) is the dimension of the space of k-forms in p dimensions — the k-th exterior power of the Spin(10) vector representation:
 
@@ -1726,17 +1726,17 @@ Each coefficient C(p, k) is the dimension of the space of k-forms in p dimension
 
 The physical constants select specific k-forms from this expansion:
 
-$$\frac{1}{\alpha_{\text{EM}}} = C(p,3) + C(p,1) + d + \text{disc} = 120 + 10 + 2 + 5 = 137$$
+1/α_EM = C(p,3) + C(p,1) + d + disc = 120 + 10 + 2 + 5 = 137
 
-$$-\log_{p}\Lambda = C(p,3) + d = 120 + 2 = 122$$
+-log_(p)Λ = C(p,3) + d = 120 + 2 = 122
 
-$$\dim(16 \otimes 16) = C(p,1) + C(p,3) + C(p,5)/2 = 10 + 120 + 126 = 256$$
+dim(16 ⊗ 16) = C(p,1) + C(p,3) + C(p,5)/2 = 10 + 120 + 126 = 256
 
 The cosmological constant uses the 3-form channel. The fine structure constant uses the 1-form and 3-form channels plus the base correction. The full tensor product uses the 1-form, 3-form, and 5-form channels. In each case, the physics selects which k-forms are active at the relevant energy scale.
 
 The generating function (1+x)^p is not a new mathematical object discovered outside the framework. It IS the Clifford algebra Cl(10) at depth 4, decomposed into its k-form grading — a structure that has been present since §14. The observation is that **every numerical result in the framework is a selection of terms from this single expansion**, parameterized by p = d · disc and corrected by d and disc individually.
 
-The framework is a zero-parameter theory. d = 2 is forced. disc = d² + 1 = 5 is forced. p = d · disc = 10 is forced. The generating function (1+x)^10 is forced. Its coefficients C(10, k) are forced. The physical constants are forced selections from these coefficients. The mirror determines the generating function; the generating function determines the physics.
+The framework is a zero-parameter theory. d = 2 is forced. disc = d² + 1 = 5 is forced. p = d · disc = 10 is forced. The generating function (1+x)¹0 is forced. Its coefficients C(10, k) are forced. The physical constants are forced selections from these coefficients. The mirror determines the generating function; the generating function determines the physics.
 
 ---
 
@@ -1750,25 +1750,25 @@ The framework is a zero-parameter theory. d = 2 is forced. disc = d² + 1 = 5 is
 
 **Expression 1 — the exponent 122:**
 
-$$122 = \text{disc} \cdot \text{pk} \cdot N_c + d = 5 \cdot 8 \cdot 3 + 2 = 120 + 2$$
+122 = disc · pk · N_c + d = 5 · 8 · 3 + 2 = 120 + 2
 
 All four framework cardinals appear exactly once. The dominant term 120 = disc · pk · N_c = C(10,3) is the dimension of the **120-channel** of Spin(10) — the antisymmetric Yukawa that generates inter-generational mixing. The cosmological constant's exponent is the 120-channel dimension plus the base dimension.
 
 **Expression 2 — n_cosmo = 409:**
 
-$$409 = \underbrace{45}_{\text{so}(10)} + \underbrace{28}_{\text{so}(8)} + \underbrace{153}_{\text{so}(18)} + \underbrace{120}_{120\text{-ch}} + \underbrace{63}_{|\text{GF}(64)^*|}$$
+409 = 45 [so(10)] + 28 [so(8)] + 153 [so(18)] + 120 [120-ch] + 63 [|GF(64)*|]
 
 The sum of five structural dimensions: the GUT algebra (d=4), the family algebra (d=8), the unified algebra (d=8), the Yukawa channel, and the nonzero elements of codon space. 409 is the **total structural content** of the framework's gauge + biological sectors.
 
 Both expressions are exact and use only framework content. A candidate derivation path exists:
 
-$$\Lambda = (d \cdot \text{disc})^{-(\text{disc} \cdot \text{pk} \cdot N_c + d)} = 10^{-122}$$
+Λ = (d · disc)^(-(disc · pk · N_c + d)) = 10⁻¹²²
 
 The suppression base is **d · disc = 2 · 5 = 10** — the product of the two founding cardinals. The decimal base is not assumed; it is framework-derived. The exponent is **disc · pk · N_c + d = 120 + 2** — the 120-channel dimension plus the base dimension.
 
 The suppression factor 1/(d · disc) = 1/10 has a structural identification: **d · disc = p, the number of Spin(10) generators at the SM depth** (d=4: p = 2(4+1) = 10). The 120-channel is C(p, 3) = C(10, 3) = 120 three-form bilinears of these p generators. Each three-form DOF explores a 3-dimensional subspace of the p-dimensional Clifford ambient; the vacuum contribution per DOF is weighted by 1/p (the dimensional fraction). The full expression:
 
-$$\Lambda = p^{-(C(p,3) + d)} \quad\text{where } p = d \cdot \text{disc} = 10$$
+Λ = p^(-(C(p,3) + d))  where  p = d · disc = 10
 
 This uses only two framework quantities: p (the Spin(10) generator count) and d (the base dimension). And p = d · disc = d(d² + 1) is derivable from d alone, since disc = d² + 1 (the discriminant equals the anchor spacing plus one: disc = d² + tr(R)² = 4 + 1 = 5).
 
@@ -1820,7 +1820,7 @@ The framework's structural index. Each x-state is a specific return-condition of
 
 | ID | Name | Description | Parents |
 |----|------|-------------|---------|
-| x.tower.0 | x-as-tower-depth-d | x at depth d via M₂(ℝ)^{⊗d}. | x.base.2, x.base.8 |
+| x.tower.0 | x-as-tower-depth-d | x at depth d via M₂(ℝ)^(⊗d). | x.base.2, x.base.8 |
 | x.tower.1 | x-as-Clifford-emergence | Cl(p,q) at depth d. Max clique = 2d+3. | x.tower.0 |
 | x.tower.2 | x-as-spacetime | Cl(3,1) at depth 1. Lorentz signature. | x.tower.1 |
 
