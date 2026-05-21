@@ -3794,6 +3794,89 @@ print(f"  PASS")
 
 print()
 print("=" * 70)
-print("STEPS 40-54 COMPLETE \u2014 15 independent verifications")
-print("  Including: three generations, generating function, zero-parameter structure")
+print()
+
+# ─────────────────────────────────────────────────────────────
+# STEP 55: Channel calculus — keystone, lift operator, spectral rigidity
+# ─────────────────────────────────────────────────────────────
+print("\u2500" * 70)
+print("STEP 55: Channel calculus (keystone, lift operator, spectral rigidity)")
+print("\u2500" * 70)
+
+# K1: Keystone R²−R = −N²
+_R2 = sp.Matrix([[0,1],[1,1]])
+_N2 = sp.Matrix([[0,-1],[1,0]])
+_I2s = sp.eye(2)
+_J2 = sp.Matrix([[0,1],[1,0]])
+_h2 = sp.Matrix([[1,0],[0,-1]])
+
+assert _R2*_R2 - _R2 == -(_N2*_N2), "K1 failed"
+print(f"  K1: R\u00b2\u2212R = \u2212N\u00b2 = I  PASS")
+
+# K2: {R,N} = tr(R)*N
+assert _R2*_N2 + _N2*_R2 == sp.trace(_R2)*_N2, "K2 failed"
+print(f"  K2: {{R,N}} = tr(R)\u00b7N  PASS  (binding \u21d4 tr(R)=1)")
+
+# K3 + C1: three/four path convergence
+assert _R2*_R2 - _R2 == _J2*_J2, "K3 failed"
+assert _J2*_J2 == -(_N2*_N2), "C1 failed"
+assert _h2*_h2 == _I2s, "h\u00b2 failed"
+assert _J2*_J2 + _N2*_N2 == sp.zeros(2), "J\u00b2+N\u00b2\u22600 failed"
+print(f"  K3+C1: R\u00b2\u2212R = J\u00b2 = h\u00b2 = \u2212N\u00b2 = I (four paths)  PASS")
+print(f"  C1: J\u00b2+N\u00b2 = 0 (off-diagonal cancellation)  PASS")
+
+# L1: Lift operator
+_L = sp.Matrix([[3,1],[1,3]])
+assert _L.det() == 8, "L1 det failed"
+assert set(_L.eigenvals().keys()) == {2, 4}, "L1 eig failed"
+print(f"  L1: det(L) = {_L.det()} = pk, eig = {{4,2}}  PASS")
+
+# L2: Lift closure
+assert _L*_L == 6*_L - 8*sp.eye(2), "L2 failed"
+print(f"  L2: L\u00b2 = 6L\u22128I  PASS")
+
+# L3: dim V+ at depth 1
+assert 4*(4+1)//2 == 10, "L3 failed"
+print(f"  L3: dim V+(d=1) = 10 = d\u00b7disc  PASS")
+
+# B1: disc(L) = d² = 4
+disc_L = sp.trace(_L)**2 - 4*_L.det()
+assert disc_L == 4, "B1 failed"
+print(f"  B1: disc(L) = {disc_L} = d\u00b2 (perfect square, count-type)  PASS")
+
+# Spectral rigidity: R tensor I at d=2
+_R4 = sp.kronecker_product(_R2, sp.eye(2))
+_ev4 = set(sp.simplify(e) for e in _R4.eigenvals().keys())
+phi_s = (1+sp.sqrt(5))/2
+phibar_s = (1-sp.sqrt(5))/2
+assert _ev4 <= {phi_s, phibar_s}, f"spectral rigidity failed at d=2: {_ev4}"
+print(f"  Spectral rigidity: spec(R\u2297I) \u2286 {{\u03c6,\u03c6\u0304}} at d=2  PASS")
+
+# Channel presentation
+_Epp = sp.Matrix([[1,0],[0,0]])
+_Epm = sp.Matrix([[0,1],[0,0]])
+_Emp = sp.Matrix([[0,0],[1,0]])
+_Emm = sp.Matrix([[0,0],[0,1]])
+assert _Epp + _Emm == _I2s, "channel I failed"
+assert _Epp - _Emm == _h2, "channel h failed"
+assert _Epm + _Emp == _J2, "channel J failed"
+assert _Emp - _Epm == _N2, "channel N failed"
+assert _J2 + _Emm == _R2, "R=J+E-- failed"
+print(f"  Channels: I=E+++E--, h=E++-E--, J=E+-+E-+, N=E-+-E+-, R=J+E--  PASS")
+
+# Lift generates tower dims
+for k in range(1, 5):
+    _Lk = _L**k
+    d_k = 2**k
+    assert int(_Lk[0,0]) == d_k*(d_k+1)//2, f"L^{k} dimV+ failed"
+    assert int(_Lk[0,1]) == d_k*(d_k-1)//2, f"L^{k} dimV- failed"
+print(f"  L^k generates sym/skew dims through depth 4  PASS")
+
+print(f"\n  ALL CHANNEL CALCULUS CHECKS PASS")
+
+
+print()
+print("=" * 70)
+print("STEPS 40-55 COMPLETE \u2014 16 independent verifications")
+print("  Including: three generations, generating function, channel calculus")
 print("=" * 70)

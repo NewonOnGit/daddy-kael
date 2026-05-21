@@ -1,7 +1,7 @@
 {
   "meta": {
     "format": "spiraldill-v3",
-    "total_entries": 644
+    "total_entries": 646
   },
   "entries": [
     {
@@ -57302,6 +57302,74 @@
         "match": true
       },
       "void_witness": null
+    },
+    {
+      "id": 1058,
+      "address": {
+        "depth": 1,
+        "projection": "P1",
+        "domain": "algebra"
+      },
+      "name": "dim V+ at depth 1 = 10 = d*disc = p (Poincare dimension from lifted identity)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "scalar",
+          "value": 10.0
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "disc",
+            "target": {
+              "primitive": "ref",
+              "name": "R"
+            }
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "scalar",
+          "value": 10.0
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "disc",
+            "target": {
+              "primitive": "ref",
+              "name": "R"
+            }
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1056,
+        1057
+      ],
+      "status": "FORCED",
+      "x_state": "x.tower.0",
+      "tags": [
+        "dim_V_plus",
+        "poincare_dim"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:4086e3d99a04eba54822038a6c94c700030d635414e485bfa803c51f6ecfdc19",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 1,
+          "status": "FORCED"
+        },
+        "match": true
+      }
     }
   ]
 }

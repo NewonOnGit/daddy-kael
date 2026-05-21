@@ -1,7 +1,7 @@
 {
   "meta": {
     "format": "spiraldill-v3",
-    "total_entries": 183
+    "total_entries": 190
   },
   "entries": [
     {
@@ -14865,6 +14865,857 @@
       },
       "_derived_coordinate_side": "biological",
       "_derived_fea_inherits_from": "x.base.3"
+    },
+    {
+      "id": 1052,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Keystone: R^2-R = -N^2 (Fibonacci surplus = minus rotation defect)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              },
+              "exponent": 2
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "neg",
+          "target": {
+            "primitive": "pow",
+            "target": {
+              "primitive": "ref",
+              "name": "N"
+            },
+            "exponent": 2
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              },
+              "exponent": 2
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "neg",
+          "target": {
+            "primitive": "pow",
+            "target": {
+              "primitive": "ref",
+              "name": "N"
+            },
+            "exponent": 2
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0,
+        5
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "keystone",
+        "surplus_defect"
+      ],
+      "two_cells": [
+        {
+          "alternative_derivation": {
+            "primitive": "equate",
+            "lhs": {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "J"
+              },
+              "exponent": 2
+            },
+            "rhs": {
+              "primitive": "ref",
+              "name": "I"
+            },
+            "tolerance": 1e-10
+          },
+          "equivalence_witness": {
+            "primitive": "equate",
+            "lhs": {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "J"
+              },
+              "exponent": 2
+            },
+            "rhs": {
+              "primitive": "ref",
+              "name": "I"
+            },
+            "tolerance": 1e-10
+          },
+          "notes": "Four-path convergence: R^2-R = J^2 = h^2 = -N^2 = I"
+        },
+        {
+          "alternative_derivation": {
+            "primitive": "equate",
+            "lhs": {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "h"
+              },
+              "exponent": 2
+            },
+            "rhs": {
+              "primitive": "ref",
+              "name": "I"
+            },
+            "tolerance": 1e-10
+          },
+          "equivalence_witness": {
+            "primitive": "equate",
+            "lhs": {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "h"
+              },
+              "exponent": 2
+            },
+            "rhs": {
+              "primitive": "ref",
+              "name": "I"
+            },
+            "tolerance": 1e-10
+          },
+          "notes": "h^2 = I (mediator involution)"
+        }
+      ],
+      "certificate": {
+        "computed_hash": "sha256:c22f11fa7ee1c92e7b46bb3a39b7139762024ff492e41e6d4fdeaf5b398d58ad",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1053,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Binding = trace condition: {R,N} = tr(R)*N, binding iff tr(R)=1",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                }
+              ]
+            },
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                }
+              ]
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "ref",
+          "name": "N"
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                }
+              ]
+            },
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                }
+              ]
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 1.0,
+          "target": {
+            "primitive": "ref",
+            "name": "N"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0,
+        7
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.7",
+      "tags": [
+        "binding",
+        "trace_condition"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:3d36a93df13485e890ccc0028de5ae9ccc075abe9d68b4f0a0198d65b12961ea",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1054,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Surplus = exchange-square: R^2-R = J^2",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              },
+              "exponent": 2
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "ref",
+            "name": "J"
+          },
+          "exponent": 2
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "pow",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              },
+              "exponent": 2
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "ref",
+            "name": "J"
+          },
+          "exponent": 2
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1052
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "keystone",
+        "exchange"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:26fc3c3cac8827886b47c8f2f3e04043b18d580677bbfe5b548e2f0af67d475b",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1055,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Off-diagonal cancellation: J^2 + N^2 = 0 (exchange^2 = -rotation^2)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "ref",
+            "name": "J"
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "neg",
+          "target": {
+            "primitive": "pow",
+            "target": {
+              "primitive": "ref",
+              "name": "N"
+            },
+            "exponent": 2
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "ref",
+            "name": "J"
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "neg",
+          "target": {
+            "primitive": "pow",
+            "target": {
+              "primitive": "ref",
+              "name": "N"
+            },
+            "exponent": 2
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1052,
+        1054
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "off_diagonal",
+        "cancellation"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:c58768899a65a3b2e47211bf8fdbf15f3cd57545653725de82cd364f3d62c927",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1056,
+      "address": {
+        "depth": 0,
+        "projection": "P1",
+        "domain": "algebra"
+      },
+      "name": "Lift operator L=3I+J: det(L) = pk = 8 = d^3; eigenvalues {4,2} = {n^2,n}",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "det",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "J"
+              }
+            ]
+          }
+        },
+        "rhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "norm",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            },
+            {
+              "primitive": "norm",
+              "target": {
+                "primitive": "ref",
+                "name": "P"
+              }
+            }
+          ]
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "det",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "J"
+              }
+            ]
+          }
+        },
+        "rhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "norm",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            },
+            {
+              "primitive": "norm",
+              "target": {
+                "primitive": "ref",
+                "name": "P"
+              }
+            }
+          ]
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        731
+      ],
+      "status": "FORCED",
+      "x_state": "x.tower.0",
+      "tags": [
+        "lift_operator",
+        "parent_kernel"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:70f665d0aa4f3479448eca061fdcd10d03d526fcba478d8aaa5f261434ce04cc",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1057,
+      "address": {
+        "depth": 0,
+        "projection": "P1",
+        "domain": "algebra"
+      },
+      "name": "Lift closure: L^2 = 6L - 8I (dimension tower analogue of R^2 = R + I)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "J"
+              }
+            ]
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "scale",
+              "factor": 6.0,
+              "target": {
+                "primitive": "sum",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "I"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "I"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "I"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "J"
+                  }
+                ]
+              }
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "scale",
+                "factor": 8.0,
+                "target": {
+                  "primitive": "ref",
+                  "name": "I"
+                }
+              }
+            }
+          ]
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "J"
+              }
+            ]
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "scale",
+              "factor": 6.0,
+              "target": {
+                "primitive": "sum",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "I"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "I"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "I"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "J"
+                  }
+                ]
+              }
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "scale",
+                "factor": 8.0,
+                "target": {
+                  "primitive": "ref",
+                  "name": "I"
+                }
+              }
+            }
+          ]
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1056
+      ],
+      "status": "FORCED",
+      "x_state": "x.tower.0",
+      "tags": [
+        "lift_closure",
+        "dimension_tower"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:7ba4ebe83d920e77fe2490d6e8db881d14c1eca84319f98eed22d7e1baf657ba",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1059,
+      "address": {
+        "depth": 0,
+        "projection": "P3",
+        "domain": "algebra"
+      },
+      "name": "Discriminant split: disc(L)=d^2=4 (count, perfect sq) vs disc(R)=5 (constant, square-free); R unique",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "disc",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "J"
+              }
+            ]
+          }
+        },
+        "rhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "trace",
+            "target": {
+              "primitive": "ref",
+              "name": "I"
+            }
+          },
+          "exponent": 2
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "disc",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "I"
+              },
+              {
+                "primitive": "ref",
+                "name": "J"
+              }
+            ]
+          }
+        },
+        "rhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "trace",
+            "target": {
+              "primitive": "ref",
+              "name": "I"
+            }
+          },
+          "exponent": 2
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1056
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "discriminant_split",
+        "constant_vs_count"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:601c5747f5b5478755fbe54119be11de54d8ee4451d022bc2e92b4277d614737",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
     }
   ]
 }

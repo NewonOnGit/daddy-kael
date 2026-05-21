@@ -60,6 +60,21 @@ The squares: I² = J² = h² = I, and **N² = −I**. Three of the four basis el
 
 Why M₂(ℝ)? Not as a postulate, but as the minimal non-trivial stage. The 1×1 algebra is trivial. The 2×2 algebra is the smallest matrix algebra that supports both symmetric and antisymmetric elements, both idempotents and nilpotents, both real eigenvalues and complex eigenvalues. It is the *simplest thing that is not simple* — and that minimality will be forced in §10 (x.base.7, Forcing 4).
 
+### §1.1. The Channel Presentation
+
+The four basis matrices admit a second reading through the matrix units E₊₊ = [[1,0],[0,0]], E₊₋ = [[0,1],[0,0]], E₋₊ = [[0,0],[1,0]], E₋₋ = [[0,0],[0,1]] — the four directed channels between two states. The canonical basis is the four sign-pairings of these channels:
+
+- I = E₊₊ + E₋₋ (diagonal sum, V₊)
+- h = E₊₊ − E₋₋ (diagonal difference, V₊) — the carrier of the asymmetry Δ
+- J = E₊₋ + E₋₊ (off-diagonal sum, V₊)
+- N = E₋₊ − E₊₋ (off-diagonal difference, V₋)
+
+T is **channel reversal**: E[a,b] ↦ E[b,a]. It fixes the three symmetric pairings (I, h, J) and negates the antisymmetric one (N). The V₊/V₋ split is "three sign-pairings fixed by reversal, one negated" — the 3/1 asymmetry is not imported, it is the count of symmetric vs antisymmetric pairings.
+
+The diagonal channels are the spectral projectors of h: E₊₊ = (I+h)/2, E₋₋ = (I−h)/2. The seed decomposes as R = J + E₋₋ = J + (I−h)/2, consistent with P = (I−h)/2 + N + J (§6).
+
+The channel contact law E[a,b]·E[c,d] = δ_{bc}·E[a,d] IS matrix multiplication — this is a presentation of M₂(ℝ), not a layer beneath it. What it genuinely buys: T becomes *derived* (reversal of channel direction) rather than posited, and the 3/1 dimension count becomes a parity count on sign-pairings. The reality of T (§8) is not derived by the channel presentation — the contact law is field-blind; reality enters as the restriction to real coefficients, which on the channel basis makes reversal coincide with transpose and keeps Δ = n.
+
 ---
 
 ## §2. The Mirror — T
@@ -167,6 +182,8 @@ R(θ) = 1/2 I + (√(5))/(2)(cosθ · J + sinθ · h)
 
 The V₊-automorphism group O(2) acts transitively on this circle: every R-instance is equivalent to every other. The framework's specific R corresponds to θ_F ≈ 1.352π. All spectral invariants (tr, det, disc, eigenvalues) are constant along the circle — they are automatically gauge-invariant.
 
+**The discriminant sorts V₊ into two kinds.** The discriminant of any V₊ element X = αI + βJ + γh is disc(X) = 4(β² + γ²) — four times its squared distance from the I-axis. This separates V₊ into **square-free discriminant** (irrational spectrum, constant-generating) and **perfect-square discriminant** (integer spectrum, counting). R alone is square-free: idempotency of the seed forces tr(R) = 1, unit closure forces det(R) = −1, giving disc = 5 — the minimal square-free value. A count-type generator (rational spectrum) cannot complete to the non-symmetric idempotent P, so R *must* be constant-type. It measures because P must return. The lift operator L = 3I + J (§8) has disc(L) = 4 = d² (perfect square, integer spectrum {4, 2}), as do J and h (both disc = 4, spectrum {±1}). R measures the constants; the rest of V₊ counts the dimensions.
+
 **FEA structure of R (x.base.5):** The defect operator is L_R(A₊) = R·A₊ + A₊·R − A₊. Its spectrum is {−√5, 0, +√5}. The zero eigenvalue is the neutral scar-axis; ±√5 are the golden failure axes. The kernel is one-dimensional, spanned by R[R,N].
 
 ### §4.2. N: Rotation Closure on V₋
@@ -207,7 +224,7 @@ NR = [[0, -1], [1, 0]][[0, 1], [1, 1]] = [[-1, -1], [0, 1]]
 
 **The anticommutator of R and N is N itself.** This is a remarkable structural identity: when the visible and hidden sectors interact symmetrically, the result is *pure hidden*. The hidden sector survives contact with visibility unchanged. R does not destroy N or dilute it — it preserves it exactly.
 
-This identity is not a coincidence of the specific matrix entries. It follows algebraically from R² = R + I and N² = −I together with the Cayley-Hamilton theorem. For any R ∈ V₊ satisfying R² = R + I and any N ∈ V₋ satisfying N² = −I in M₂(ℝ), the anticommutator {R, N} = N. It is a theorem, not a contingency.
+This identity is not a coincidence of the specific matrix entries. More precisely, {R, N} = tr(R)·N for every symmetric R, since N anticommutes with J and h and commutes with I. The binding {R, N} = N is therefore exactly the trace condition tr(R) = 1 — equivalently, that P is a rank-1 idempotent — and is independent of the Fibonacci determinant det(R) = −1, which is carried separately by the V₊ recursion. The binding lives in V₋ because {R, N}ᵀ = −{R, N}: the anticommutator of a symmetric and an antisymmetric matrix is antisymmetric.
 
 **The commutator** [R, N] = RN − NR is the antisymmetric interaction:
 
@@ -237,7 +254,17 @@ This is not an axiom — it is a **theorem**. Given R² = R + I and N² = −I a
 
 P² = (R+N)² = R² + RN + NR + N² = (R+I) + {R,N} + (-I) = R + I + N - I = R + N = P
 
-The idempotence of P is *forced* by the three prior identities. The derivation chain is complete:
+The idempotence of P is *forced* by the three prior identities.
+
+Read in reverse, the idempotence IS the two closures. Split P² − P into its mirror-eigenspace parts: the symmetric (V₊) part is R² − R + N², and the antisymmetric (V₋) part is {R,N} − N. Both vanish exactly when P² = P. The visible sector contributes the **keystone identity**:
+
+R² − R = −N²
+
+The Fibonacci surplus equals minus the rotation defect. The +I of R² = R + I is precisely −N². The hidden sector contributes the binding {R,N} = N. Idempotent return is not downstream of the two closures — projected onto the mirror's eigenspaces, it *is* them.
+
+The three-path convergence sharpens the keystone: R² − R = J² = h² = −N² = I. Three mechanisms — Fibonacci surplus, exchange involution, rotation defect — land on the same identity. The off-diagonal closures cancel: J² + N² = 0. The exchange-squared (J² = I) is the diagonal return that contact cannot avoid, and this is exactly the Landauer cost +I.
+
+The derivation chain is complete:
 
 T →[spec] S₀ = {+1,−1} →[eigendecomp] V₊ ⊕ V₋ →[closure] R, N →[binding] {R,N}=N →[assembly] P = R+N →[theorem] P² = P
 
@@ -347,6 +374,8 @@ Complex Bott period is 2 (not 8): Cl_ℂ(p) = M_n(ℂ) for p even. Complex ancho
 - **Complex R-locus**: U(2)/(U(1) × U(1)) = ℂP¹ = S², dim 2 — the R-Bloch-sphere R(n) = (1/2)I + (√5/2)(n_x σ_x + n_y σ_y + n_z σ_z) for unit n. The discrete Z₂ gauge dissolves into continuous U(1) action. Predictive power strictly weaker.
 
 **Why the extra dimension appears**: The real R-circle is the equator (n_y = 0) of the complex R-Bloch-sphere. The σ_y direction corresponds to −iN, which is *antisymmetric* under real transpose (living in V₋) but *Hermitian* under complex conjugation (living in V₊_ℂ). Going complex moves σ_y from V₋ to V₊, opening an unfixed continuous gauge direction.
+
+**The lift eigenstructure makes the asymmetry's fate precise.** The doubling of the room is governed by the lift operator L = 3I + J ∈ V₊, acting on (dim V₊, dim V₋). Its coefficients (3, 1) are the base sector dimensions themselves. L diagonalizes with eigenvalues 4 and 2: the bulk dimension p + q grows ×4 per lift (area-like), while the asymmetry Δ = p − q grows ×2 (length-like). The asymmetry is the slow eigenvector — one power of two behind the bulk — so the asymmetry fraction Δ/dim falls as 2⁻ᵏ. The product of the two growth rates is det(L) = 8 = pk = d³, and L obeys its own closure L² = 6L − 8I — the dimension tower's analogue of R² = R + I, with eigenvalues {4, 2} where R has {φ, φ̄}. Lᵏ generates the sym/skew dimensions exactly as Rⁿ generates Fibonacci. The eigenvalues {n², n} are forced by the base dimension n = 2 (verified symbolically for all n). R and L are two points on one machine: R has square-free discriminant (disc = 5, irrational spectrum, measures constants), L has perfect-square discriminant (disc = 4, integer spectrum, counts dimensions). Hermitian conjugation removes the slow mode entirely — the eigenvalue-2 asymmetry vanishes, leaving only the eigenvalue-4 bulk — so Δ_ℂ = 0 at every level: complexification IS projection onto the bulk eigenvector.
 
 **Forcing 2 conclusion:** Reality of T is **FORCED**. T must be the real matrix transpose, not Hermitian conjugation. The complex framework is structurally degenerate: it eliminates the diagonal asymmetry, densifies the anchor lattice, and weakens the gauge structure.
 
@@ -560,6 +589,10 @@ This theorem reveals a deep structural pattern: the Fibonacci numbers F_n measur
 *Proof.* By (A ⊗ B)(C ⊗ D) = (AC) ⊗ (BD): (R^(⊗k))² = (R²)^(⊗k) = (R+I)^(⊗k). The right side expands by tensor distributivity into 2^k summands, each a tensor product of R's and I's. ∎
 
 At k = 2: (R ⊗ R)² = R⊗R + R⊗I + I⊗R + I⊗I. The canonical compression identity R² = R + I is not just a base-level fact — it is a **structural property preserved at every tower depth**. The selection law commutes with the tower lift.
+
+### Spectral Rigidity
+
+The closure law is spectrally rigid. Any X with X² = X + I has minimal polynomial dividing λ² − λ − 1, so **spec(X) ⊆ {φ, φ̄} in every dimension**. A level-k Fibonacci element is determined up to its multiplicity split (m_φ, m_φ̄) with m_φ + m_φ̄ = 2ᵏ and an eigenbasis gauge; the balanced pad-lift R ⊗ I^{⊗(k−1)} realizes it exactly. The tensor power R^{⊗k} is a different object — it satisfies (R^{⊗k})² = (R+I)^{⊗k}, not Fibonacci closure. No level admits a genuinely new R: the surplus law freezes the spectrum to the golden pair at every depth. Genuinely new structure enters only through the anticommuting-clique signatures of §14.
 
 ### Selection Law Exclusivity
 
