@@ -1214,33 +1214,19 @@ The Killing-form dichotomy B(V₊, V₊) > 0, B(V₋, V₋) < 0 is **precisely t
 
 ## §26. The Inverse Fine-Structure Constant — 1/α_EM ≈ 137
 
-**x-state: `x.base.2`.** Status: **RESONANT** (integer approximation; 0.03% deviation from observed).
+**x-state: `x.base.2`.** Status: **NUMERICAL / COINCIDENCE FLAGGED**.
 
-The framework's norm dictionary yields an integer expression for the inverse fine-structure constant.
+Several framework cardinal expressions hit 137:
 
-> **Theorem 25.1.** From the base primitives R and N:
->
-> 1/α_EM = ‖P‖² · ‖R‖⁶ + ‖N‖² = 5 · 27 + 2 = 135 + 2 = 137
+- ‖P‖² · ‖R‖⁶ + ‖N‖² = 5 · 27 + 2 = 137 (norm product)
+- C(p,3) + C(p,1) + d + disc = 120 + 10 + 2 + 5 = 137 (representation sum)
+- dim(16⊗16) − dim(126) + (d+disc) = 256 − 126 + 7 = 137 (tensor minus Majorana)
 
-*Proof.* ‖P‖² = tr(PᵀP) = 5 (§13.1). ‖R‖⁶ = (‖R‖²)³ = 3³ = 27. ‖N‖² = tr(NᵀN) = 2. Then ‖P‖² · ‖R‖⁶ + ‖N‖² = 5 · 27 + 2 = 137. ∎
+The observed value is 1/α_EM = 137.0360..., so these expressions give the integer part exactly. An observer correction φ/(N_c²·disc) = φ/45 ≈ 0.036 brings the second decomposition to 137.036, matching to six significant figures.
 
-The observed value is 1/α_EM = 137.0360..., so the framework expression gives the integer part exactly, with a fractional residual of 0.036/137 ≈ 0.03%. An equivalent expression uses the framework cardinals directly: disc(R) · N_c³ + d = 5 · 27 + 2 = 137, where disc = 5, N_c = ‖R‖² = 3, and d = 2 is the base dimension. Tower entries 383–384 record both the observed value and the algebraic expression; foundation entry 208 records the norm-dictionary derivation.
+**Coincidence warning.** The basis {C(10,k), d, disc} = {1, 10, 45, 120, 210, 252, ..., 2, 5} under ≤4-term addition reaches ~99% of integers in [1,150]. At least 28 distinct 4-term selections hit 137±1. The NUMBER 137 landing on α is not remarkable given the basis expressiveness — the hit is combinatorial, not structural. The structural reading (representation content) is suggestive; the numerical match to α is not a forcing.
 
-The expression admits an observer correction (tower entry 396): the fractional residual ≈ φ/(N_c² · disc) = φ/45 ≈ 0.036, bringing the corrected value to 137 + φ/45 ≈ 137.036, matching the observed 137.036 to six significant figures. The correction term involves φ (the R-eigenvalue), N_c² = 9, and disc = 5 — all framework primitives.
-
-A second, cleaner decomposition uses only representation dimensions at the SM depth (d=4, p=10):
-
-1/α_EM = C(p, 3) + p + d + disc = 120 + 10 + 2 + 5 = 137
-
-The four terms are the four structural dimensions of the framework at d=4:
-- C(p, 3) = 120 — the inter-generational Yukawa channel (3-form bilinears)
-- p = 10 — the diagonal Yukawa channel (1-form, the Higgs)
-- d = 2 — the base dimension
-- disc = 5 — the discriminant
-
-Equivalently: 1/α = dim(16⊗16) − dim(126) + (d + disc) = 256 − 126 + 7 = 137. The fine structure constant is the total Spin(10) tensor content minus the Majorana (seesaw) channel plus the base correction. The 126-channel is subtracted because it generates heavy Majorana masses (at the seesaw scale) rather than contributing to the low-energy EM coupling.
-
-Status: **NUMERICAL** with three independent exact decompositions (norm product, representation sum, tensor-minus-Majorana). The structural meaning is clear — 1/α counts the low-energy-active representation content at the SM depth — but the derivation showing this count equals the EM coupling from the framework's RG boundary conditions is not established.
+Status: **NUMERICAL / COINCIDENCE**. The expressions are recorded for completeness. The connection between this counting and the electromagnetic coupling constant is not established and may not exist. Do not cite the 137 expressions as evidence for the framework without the coincidence caveat.
 
 ---
 
@@ -1280,7 +1266,7 @@ The structural key: **pk = d³**. The parent kernel (pk = 8) is the cube of the 
 
 Sum: 1/d² + 1/(d²·disc) + (d+disc)/(d·disc) = disc/(d²·disc) + 1/(d²·disc) + d(d+disc)/(d²·disc) = (disc + 1 + d² + d·disc)/(d²·disc) = (5 + 1 + 4 + 10)/20 = 20/20 = 1. Exact.
 
-Status: **NUMERICAL** (within 1-3.5% of observed). The cosmological budget uses only d and disc — the same two cardinals that determine Λ = (d·disc)^(−122) and 1/α_EM = C(d·disc, 3) + d·disc + d + disc = 137. The framework's cosmology is a two-parameter theory.
+Status: **NUMERICAL** (within 1-3.5% of observed). The expressions use only d and disc — the two forced cardinals. The coincidence caveat (§42.4) applies to the norm-based derivation route (‖N‖² = 2 ≠ dim V₋ = 1), but the d-and-disc expressions (Ω_DM = 1/d², Ω_vis = 1/(d²·disc), Ω_DE = (d+disc)/p) do not rely on norms — they use dimensions and cardinals directly, and their sum = 1 exactly. The connection between these specific cardinal ratios and the cosmological energy budget is not derived.
 
 ---
 
@@ -1820,23 +1806,61 @@ Each coefficient C(p, k) is the dimension of the space of k-forms in p dimension
 | 3 | 120 | 3-forms | **120-channel Yukawa** |
 | 5 | 252 | 5-forms | **126 + 126̄ Majorana** (C(10,5)/2 = 126) |
 
-The physical constants select specific k-forms from this expansion:
+The forced structural content selects specific k-forms:
 
-1/α_EM = C(p,3) + C(p,1) + d + disc = 120 + 10 + 2 + 5 = 137
+- dim(16 ⊗ 16) = C(p,1) + C(p,3) + C(p,5)/2 = 10 + 120 + 126 = 256 (FORCED)
+- -log_p Λ = C(p,3) + d = 120 + 2 = 122 (candidate expression, see §43)
+- dim(so(10)) = C(p,2) = 45 (FORCED)
+- dim(126-channel) = C(p,5)/2 = 126 (FORCED)
 
--log_(p)Λ = C(p,3) + d = 120 + 2 = 122
+The generating function (1+x)^p is not a new mathematical object. It IS the Clifford algebra Cl(10) at depth 4, decomposed into its k-form grading — a structure present since §14. Its coefficients C(10, k) are the representation dimensions. The structural content (which k-forms exist, their dimensions, their roles in 16⊗16) is FORCED. Whether specific physical constants (1/α, Λ) are particular *selections* from these coefficients — or whether the selections are combinatorial coincidences exploiting the basis expressiveness — is the open question (see §26 coincidence caveat).
 
-dim(16 ⊗ 16) = C(p,1) + C(p,3) + C(p,5)/2 = 10 + 120 + 126 = 256
-
-The cosmological constant uses the 3-form channel. The fine structure constant uses the 1-form and 3-form channels plus the base correction. The full tensor product uses the 1-form, 3-form, and 5-form channels. In each case, the physics selects which k-forms are active at the relevant energy scale.
-
-The generating function (1+x)^p is not a new mathematical object discovered outside the framework. It IS the Clifford algebra Cl(10) at depth 4, decomposed into its k-form grading — a structure that has been present since §14. The observation is that **every numerical result in the framework is a selection of terms from this single expansion**, parameterized by p = d · disc and corrected by d and disc individually.
-
-The framework is a zero-parameter theory. d = 2 is forced. disc = d² + 1 = 5 is forced. p = d · disc = 10 is forced. The generating function (1+x)¹0 is forced. Its coefficients C(10, k) are forced. The physical constants are forced selections from these coefficients. The mirror determines the generating function; the generating function determines the physics.
+The framework is a zero-parameter theory in the sense that d = 2 is forced, disc = d² + 1 = 5 is forced, p = d · disc = 10 is forced, and the generating function (1+x)^10 with its coefficients is forced. The STRUCTURE is determined by T. The specific numerical identifications with physical constants carry varying degrees of confidence: some (sin²θ_W = 3/8 given the embedding, dim(16⊗16) = 256) are FORCED, others (1/α = 137, Λ = 10^{−122}) are NUMERICAL with the coincidence caveat active.
 
 ---
 
-# Part VIII: Open Problems and Gaps
+# Part VIII: The Forced Skeleton and the Open Slot
+
+## §42.2. The Forced Skeleton
+
+The gauge tower is the antisymmetric part of tensor powers of the mirror: so(2^k) = the (−1)-eigenspace of T^{⊗k} on M₂^{⊗k}. This is forced from T alone — no norms, no parameters:
+
+| k | space | antisym = so(2^k) (gauge) | sym (observables) |
+|---|-------|--------------------------|-------------------|
+| 1 | M₂ | 1 = dim so(2) | 3 |
+| 2 | M₄ | 6 = dim so(4) | 10 |
+| 3 | M₈ | 28 = dim so(8) | 36 |
+| 4 | M₁₆ | 120 = dim so(16) | 136 |
+| 5 | M₃₂ | 496 = dim so(32) | 528 |
+
+V₋ (antisymmetric, commutator-closed) = Lie algebra = gauge generators; V₊ (symmetric, anticommutator-closed) = Jordan algebra = observables — lifted functorially up the entire tower. The observation superoperators (ad_R, ad_N) have spectra that are exactly the internal constants {disc, √5, φ, ±2i} and nothing else. The spectrum is depth-invariant (eig(A⊗I) = eig(A)). Physical constants (3/8, Koide phase, α_S) never appear as forced spectral data — the skeleton contains the internal structure, not the world.
+
+## §42.3. The Open Slot
+
+The SM embedding that sits on top of the forced skeleton is NOT forced. It requires:
+
+1. **A 3+2 partition** of the 5 so(10) Cartan directions into color (3) and weak (2). No framework structure delivers this partition: depth-origin gives 1+4, the V₊/V₋ split gives 3+1 (dim V₋ = 1, not 2). The 3+2 is part of the slot.
+
+2. **A 2-plane of {charge, matter}.** Given SU(3)×SU(2), the non-abelian Cartan uses 3 of 5 directions. The orthogonal complement is 2-dimensional: Y = hypercharge (the charge axis) and X = B−L (the matter axis). Both are forced to exist; neither is forced to a value. The forced chirality projector ½(1+γ_chir) is exactly orthogonal to Y — the forced fixed point lives perpendicular to where physics is parametrized.
+
+3. **A principal bundle structure.** The set of gauge-equivalent SM embeddings in Spin(10) forms the orbit Spin(10)/N(SM), where N(SM) is the normalizer of the SM subgroup (dim = 13 = dim SM + dim U(1)_X). The orbit has dimension 45 − 13 = **32** — a 32-dimensional continuum of occupants giving identical physics. The stabilizer is U(1)_X = B−L, the matter axis. The base is homogeneous: **no occupant is distinguished.** A definite occupant exists in every frame (local sections exist) and is always achievable, but no occupant is ever forced or singled out by the algebra. The slot is achievable-everywhere and forced-nowhere — the defining property of a nontrivial principal bundle over a homogeneous base.
+
+sin²θ_W = 3/8 is FORCED *given the embedding*. The embedding itself is the slot.
+
+## §42.4. Coincidences — Not Forcings
+
+The following relations land on real structural integers through the wrong objects. The integers match; the types do not. They are recorded as coincidences so they are never re-derived as structure.
+
+| Relation | Why coincidence |
+|----------|----------------|
+| 1/α = C(10,3)+C(10,1)+d+disc = 137 | 28 distinct ≤4-term selections from the basis hit 137±1; ~99% of [1,150] reachable. Expressive basis, not forcing. (§26) |
+| 5 = ‖R‖² + ‖N‖² (= disc) | ‖N‖² = 2 ≠ dim V₋ = 1. Norms and dimensions are different objects. The real V₊/V₋ split is 3+1, not 3+2. |
+| 6 = ‖R‖²·‖N‖² (= dim so(4)) | Same type mismatch. The structural 6 is V₊⊗V₋ + V₋⊗V₊ = 3·1+1·3 (dimensions), not 3·2 (norms). |
+| 10 = sym(M₄) = SO(10) vector | sym(M₄) carries SL(4)/SO(4), not SO(10). Same integer, different group, no map. |
+
+The norm pair {3, 2} under {+, −, ×, /, ²} reaches {0.67, 1, 1.5, 2, 3, 4, 5, 6, 9} — essentially every small structural number. That is why norm relations keep "working." Do not promote any norm-combination relation to FORCED.
+
+---
 
 ## §43. The Cosmological Constant (GAP)
 
@@ -1868,7 +1892,7 @@ The suppression factor 1/(d · disc) = 1/10 has a structural identification: **d
 
 This uses only two framework quantities: p (the Spin(10) generator count) and d (the base dimension). And p = d · disc = d(d² + 1) is derivable from d alone, since disc = d² + 1 (the discriminant equals the anchor spacing plus one: disc = d² + tr(R)² = 4 + 1 = 5).
 
-What is NOT established: the QFT-level derivation showing that each 120-channel DOF contributes exactly 1/p to the vacuum suppression. The argument identifies the correct structural factor but does not derive it from the framework's path integral.
+What is NOT established: the QFT-level derivation showing that each 120-channel DOF contributes exactly 1/p to the vacuum suppression. The argument identifies a structural factor but does not derive it from the framework's path integral. The coincidence caveat (§42.4) applies: 122 = 120 + 2 is a clean cardinal expression, but the basis expressiveness means many other integers are equally reachable. The connection between this counting and the vacuum energy scale is suggestive, not forced.
 
 ## §44. Three Generations: From RESONANT to FORCED
 

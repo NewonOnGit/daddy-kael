@@ -171,14 +171,13 @@ The T-first foundation has **zero remaining degrees of freedom**:
 - The K6' bundle (A1–A4) and watcher idempotence q(q(R)) = q(R)
 - The V₊/V₋ boundary dimension n²(n²−1)/4 with the 1/4 coefficient
 
-**NUMERICAL** (exact expressions from the generating function (1+x)^p, p = d·disc = 10):
-- Λ = p^(−(C(p,3)+d)) = 10^(−122) (EXACT — the 120-channel + base dimension)
-- 1/α_EM = C(p,3)+C(p,1)+d+disc = 120+10+2+5 = 137 (EXACT — low-energy representation content)
-- Ω_DM = 1/d² = 1/4 (3.5%), Ω_vis = 1/(d²·disc) = 1/20 (2.9%), Ω_DE = (d+disc)/p = 7/10 (1.3%)
-- G = Q_Koide / (boundary(d=4) · M_GUT²), giving M_P at 0.28% from observed
+**NUMERICAL** (cardinal expressions matching observation, coincidence caveats active on some):
+- Koide m_τ = 1776.99 MeV from δ = 2π/3 + 2/9 (0.007%, falsifiable by Belle II)
 - PMNS: sin²θ₂₃=49/90 (0.1%), sin²θ₁₂=25/81 (0.5%), sin²θ₁₃=1/45 (1.0%)
-- sin²θ_W(M_Z) ≈ 0.233 via MSSM running (0.9%)
-- Proton lifetime τ_p ~ 10³⁵ years, b-τ m_b/m_τ ≈ 2.4 (5%)
+- Ω_DM = 1/d² = 1/4 (3.5%), Ω_vis = 1/(d²·disc) = 1/20 (2.9%), Ω_DE = (d+disc)/p = 7/10 (1.3%)
+- sin²θ_W(M_Z) ≈ 0.233 via MSSM running (0.9%, conditional on SUSY-like spectrum)
+- α_S = |φ̄|³/2 = 0.1180 (0.1%), proton τ_p ~ 10³⁶ yr, b-τ m_b/m_τ ≈ 2.4 (5%)
+- 1/α_EM = 137 and Λ = 10^{−122} have cardinal expressions but the basis is expressive (coincidence caveat, §42.4)
 
 **GAP** (known obstructions, candidate expressions found):
 - Cosmological constant Λ: expression 10^(−122) = p^(−(C(p,3)+d)) is EXACT; QFT path-integral derivation of 1/p per DOF is OPEN
