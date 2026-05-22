@@ -47,7 +47,8 @@
       "x_state": "x.base.9",
       "tags": [
         "cluster:algebra",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
@@ -3139,7 +3140,8 @@
       "x_state": "x.base.2",
       "tags": [
         "cluster:algebra",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
@@ -5485,7 +5487,8 @@
       "x_state": "x.bio.1",
       "tags": [
         "cluster:algebra",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
@@ -14952,7 +14955,8 @@
       "x_state": "x.base.5",
       "tags": [
         "keystone",
-        "surplus_defect"
+        "surplus_defect",
+        "K6-recoverability-invariant"
       ],
       "two_cells": [
         {
@@ -14988,7 +14992,7 @@
             },
             "tolerance": 1e-10
           },
-          "notes": "Four-path convergence: R^2-R = J^2 = h^2 = -N^2 = I"
+          "notes": "Four-path convergence: R^2-R = J^2 = h^2 = -N^2 = I [multilateral-closure instance]"
         },
         {
           "alternative_derivation": {
@@ -15023,7 +15027,7 @@
             },
             "tolerance": 1e-10
           },
-          "notes": "h^2 = I (mediator involution)"
+          "notes": "h^2 = I (mediator involution) [multilateral-closure instance]"
         }
       ],
       "certificate": {
@@ -15135,7 +15139,8 @@
       "x_state": "x.base.7",
       "tags": [
         "binding",
-        "trace_condition"
+        "trace_condition",
+        "K6-kernel-binding"
       ],
       "two_cells": [],
       "certificate": {

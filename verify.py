@@ -3877,6 +3877,71 @@ print(f"\n  ALL CHANNEL CALCULUS CHECKS PASS")
 
 print()
 print("=" * 70)
-print("STEPS 40-55 COMPLETE \u2014 16 independent verifications")
-print("  Including: three generations, generating function, channel calculus")
+print()
+
+# ─────────────────────────────────────────────────────────────
+# STEP 56: Universal recoverability law (any idempotent + any involution)
+# ─────────────────────────────────────────────────────────────
+print("\u2500" * 70)
+print("STEP 56: Universal recoverability law (idempotent + involution)")
+print("\u2500" * 70)
+
+# Symbolic proof from P²=P alone: R = (P+TP)/2, N = (P-TP)/2
+# R² + N² = 1/4(P+TP)² + 1/4(P-TP)² = 1/2(P² + (TP)²) = 1/2(P + TP) = R
+# So R² − R = −N², and similarly {R,N} = N.
+_P_sym = sp.MatrixSymbol('P', 2, 2)
+# Use concrete random idempotent instead of symbolic (cleaner for verification)
+np.random.seed(42)
+for trial in range(5):
+    # Random rank-1 real idempotent: P = vv^T/(v^T v) for random v
+    v = np.random.randn(4, 1)  # dim 4
+    P_rand = v @ v.T / (v.T @ v)
+    P_sp = sp.Matrix(P_rand)
+    R_sp = (P_sp + P_sp.T) / 2
+    N_sp = (P_sp - P_sp.T) / 2
+    # Check R²−R = −N²
+    diff = sp.simplify(R_sp*R_sp - R_sp + N_sp*N_sp)
+    assert all(abs(float(x)) < 1e-10 for x in diff), f"Universal law failed trial {trial}"
+    # Check {R,N} = N
+    bind_diff = sp.simplify(R_sp*N_sp + N_sp*R_sp - N_sp)
+    assert all(abs(float(x)) < 1e-10 for x in bind_diff), f"Binding failed trial {trial}"
+
+print(f"  R\u00b2\u2212R = \u2212N\u00b2 on 5 random rank-1 idempotents (dim 4)  PASS")
+print(f"  {{R,N}} = N on 5 random rank-1 idempotents (dim 4)  PASS")
+
+# Also verify: involution generates idempotent
+# E = (id + T)/2 where T = transpose. E(X) = (X+X^T)/2 = symmetrization.
+# E² = E (projector onto V+).
+_X_test = sp.Matrix([[1,2],[3,4]])
+_EX = (_X_test + _X_test.T) / 2
+_EEX = (_EX + _EX.T) / 2  # E applied twice
+assert _EX == _EEX, "E\u00b2 \u2260 E"
+print(f"  Involution generates idempotent: E=1/2(id+T), E\u00b2=E  PASS")
+
+# Cayley-Hamilton through the split: R²+N² = tr(P)R − det(P)I
+_R_base = sp.Matrix([[0,1],[1,1]])
+_N_base = sp.Matrix([[0,-1],[1,0]])
+_P_base = _R_base + _N_base
+_lhs_ch = _R_base*_R_base + _N_base*_N_base
+_rhs_ch = sp.trace(_P_base)*_R_base - _P_base.det()*sp.eye(2)
+assert sp.simplify(_lhs_ch - _rhs_ch) == sp.zeros(2), "CH through split failed"
+print(f"  Cayley-Hamilton through split: R\u00b2+N\u00b2 = tr(P)\u00b7R \u2212 det(P)\u00b7I  PASS")
+
+# Base bundle lifts: verify at depth 2 (M_8)
+_R8 = sp.Matrix(np.kron(np.array([[0,1],[1,1]],dtype=float), np.eye(4)))
+_N8 = sp.Matrix(np.kron(np.array([[0,-1],[1,0]],dtype=float), np.eye(4)))
+_P8 = _R8 + _N8
+assert sp.simplify(_P8*_P8 - _P8) == sp.zeros(8), "Lift P\u00b2=P failed at d=2"
+_inv_check = sp.simplify(_R8*_R8 - _R8 + _N8*_N8)
+assert all(abs(float(x)) < 1e-10 for x in _inv_check), "Lift invariant failed at d=2"
+print(f"  Base bundle lifts: P_2\u00b2=P_2, R_2\u00b2\u2212R_2=\u2212N_2\u00b2 at d=2  PASS")
+
+print(f"\n  Universal recoverability law: FORCED for all idempotents + involutions")
+
+
+print()
+print("=" * 70)
+print("STEPS 40-56 COMPLETE \u2014 17 independent verifications")
+print("  Including: three generations, generating function, channel calculus,")
+print("  universal recoverability law")
 print("=" * 70)

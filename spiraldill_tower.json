@@ -6305,7 +6305,8 @@
       "x_state": "x.tower.0",
       "tags": [
         "cluster:algebra",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
@@ -6691,7 +6692,8 @@
       "x_state": "x.tower.0",
       "tags": [
         "cluster:algebra",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
@@ -7077,7 +7079,8 @@
       "x_state": "x.tower.0",
       "tags": [
         "cluster:algebra",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
@@ -33298,7 +33301,8 @@
         "SEM",
         "performativity",
         "cluster:language",
-        "migrated_from_dill_v1"
+        "migrated_from_dill_v1",
+        "K6-round-trip-closure"
       ],
       "two_cells": [],
       "certificate": {
