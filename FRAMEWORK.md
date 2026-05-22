@@ -1835,6 +1835,10 @@ The gauge tower is the antisymmetric part of tensor powers of the mirror: so(2^k
 
 V₋ (antisymmetric, commutator-closed) = Lie algebra = gauge generators; V₊ (symmetric, anticommutator-closed) = Jordan algebra = observables — lifted functorially up the entire tower. The observation superoperators (ad_R, ad_N) have spectra that are exactly the internal constants {disc, √5, φ, ±2i} and nothing else. The spectrum is depth-invariant (eig(A⊗I) = eig(A)). Physical constants (3/8, Koide phase, α_S) never appear as forced spectral data — the skeleton contains the internal structure, not the world.
 
+**The categorical bound.** The framework's single degree of structure is **2** — the generator-dimension, which IS the involution-order (T lives on the 2-dim generator, |S₀| = |spec(T)| = 2, eigenvalues of N = {+i,−i}, tower growth 2^k). All forced appearances of 2 collapse to one categorical type: the binary (generator-dimension = involution-cardinality). **3** is its invariant shadow: dim V₊ = n(n+1)/2 at n=2 = 3, the fixed locus of the involution acting on the generator's endomorphisms. 3 is forced but derived — the observable/Jordan sector that the 2 sees of itself. Everything forced is one object (a 2-dim space carrying one involution) tensored with itself (the 2, powered) and split by the involution (3 = invariants, 1 = anti-invariants). The norm appearances (‖R‖² = 3, ‖N‖² = 2) are off-type: they happen to hit the same integers through Frobenius norms rather than dimensions, and are flagged as coincidences (§42.4).
+
+**Type-clustering diagnostic.** A recurring small number is a real categorical bound iff its forced appearances collapse to one categorical type. Scatter across types → coincidence (the same failure mode that burned the norm relations and the 137 selection). This diagnostic is the formal version of the type-check that separated the skeleton from the coincidences throughout this analysis.
+
 ## §42.3. The Open Slot
 
 The SM embedding that sits on top of the forced skeleton is NOT forced. It requires:
