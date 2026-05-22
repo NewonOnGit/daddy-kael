@@ -1162,13 +1162,15 @@ SM one-loop β-functions: b₁ = +41/10, b₂ = −19/6, b₃ = −7.
 | Non-SUSY SM | ≈ 0.200 | ~13% off (standard non-SUSY GUT failure) |
 | **MSSM** | **≈ 0.233** | **~0.9% match** ✓ |
 
+The GUT value sin²θ_W = 3/8 is FORCED. The M_Z match is **conditional (RESONANT)**: the 0.9% agreement requires SUSY-like running (MSSM β-functions), which implies a supersymmetric spectrum between M_Z and M_GUT that the LHC has not found. Non-SUSY running gives ~0.200, a 13% miss. This is an outward-pointing commitment: the framework's algebraic 3/8, to land on the observed 0.2312 at M_Z, commits to new physics between the electroweak and unification scales. The absence of observed SUSY partners below ~1 TeV is a standing tension — not a falsification (the spectrum could sit at higher scales), but a discomfort that should not be buried.
+
 ### Bridge 2: Proton Decay
 
 Framework input: 12 X,Y bosons, M_X ≈ 2×10¹⁶ GeV (MSSM-GUT).
 
 τ_p ≈ 10^(35 ± 1)  years
 
-Consistent with Super-K lower bound τ_p > 1.6 × 10³⁴ years. Within Hyper-K projected reach (~10³⁵ years). The **same M_GUT** appears in both bridges — a non-trivial cross-prediction.
+Consistent with Super-K lower bound τ_p > 1.6 × 10³⁴ years. The central estimate ~3 × 10³⁶ yr is at or beyond Hyper-K's projected ~10³⁵ yr sensitivity, depending on M_X and the decay-channel prefactor. The **same M_GUT** appears in both bridges — a non-trivial cross-prediction. Status: NUMERICAL, order-of-magnitude.
 
 ### Bridge 3: b-τ Yukawa Unification
 
@@ -1298,6 +1300,8 @@ This value is the **same 1/8 that appears as the stability curvature** 1/V''(1) 
 
 The Lagrangian-level quartic (tower entry 297) records λ_Lagrangian = 4 for the canonically normalized potential V(ε) = (1 − ε²)², where ε parameterizes the departure from the idempotent vacuum. The ratio λ_Lagrangian/V''(1) = 4/8 = 1/2 is the standard canonical-normalization factor.
 
+**Boundary vs physical scale.** λ = 1/8 = 0.125 is the FORCED value at the boundary (unification) scale. The measured physical quartic at M_Z is λ(M_Z) = m_H²/(2v²) = 0.1294, differing by 3.4%. The SM quartic runs downward with energy (top-Yukawa-dominated β_λ < 0 near M_Z), so the boundary value 0.125 is reached above M_Z — the direction and magnitude of the gap are consistent with RG running. The framework commits λ = 1/8 at the boundary; the physical Higgs mass requires running to M_Z.
+
 ---
 
 ## §29. The Koide Formula — Q = 2/3
@@ -1329,9 +1333,20 @@ The **Koide phase** — the angular parameter δ in the mass eigenvalue formula 
 
 The displacement quantum 2/9 = |S₀|/|V₄ \ {0}|² = 2/3² (tower entry 278) is the binary alphabet divided by the square of the non-identity elements of V₄. The Koide phase departs from the symmetric value 2π/3 by exactly this quantum.
 
-With Q = 2/3 and δ = 2π/3 + 2/9, the predicted lepton masses match observation:
-- m_μ = 105.658 MeV (predicted from Koide, 0.001% agreement with observed 105.658 MeV)
-- m_τ = 1776.9 MeV (predicted from Koide, 0.007% agreement with observed 1776.86 MeV)
+With Q = 2/3 and δ = 2π/3 + 2/9, anchoring the overall scale on m_e alone, the predicted lepton masses are:
+
+| Quantity | Predicted | Measured (PDG 2024) | Deviation |
+|----------|-----------|-------------------|-----------|
+| m_μ/m_e | 206.7703 | 206.7683 | 0.001% |
+| m_τ/m_e | 3477.473 | 3477.228 | 0.007% |
+| m_μ | 105.6594 MeV | 105.6584 MeV | 0.001% |
+| **m_τ** | **1776.99 MeV** | **1776.86 ± 0.12 MeV** | **+1.04σ** |
+
+The displacement 2/9 = 0.222222 extracted from pure cardinals matches the empirical displacement (Fourier-projected from the three measured masses) of 0.222230 rad — agreement to **0.004%**, four-to-five significant figures.
+
+**Forward commit and falsification threshold.** The framework predicts m_τ = 1776.99 MeV. Belle II's projected ±0.02 MeV precision will sharpen this test within the decade. A measured central value below 1776.92 MeV falsifies the relation at 3σ. The input (2/9 from |S₀|/|V₄\{0}|²) is provably mass-independent — no lepton mass enters the derivation.
+
+Status: **NUMERICAL** (forward). The K4-minimization step selecting δ over the other S₃ symmetric points is RESONANT until that selection closes. Do not promote to FORCED.
 
 ---
 
