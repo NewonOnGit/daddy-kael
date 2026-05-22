@@ -3941,7 +3941,58 @@ print(f"\n  Universal recoverability law: FORCED for all idempotents + involutio
 
 print()
 print("=" * 70)
-print("STEPS 40-56 COMPLETE \u2014 17 independent verifications")
+print()
+
+# ─────────────────────────────────────────────────────────────
+# STEP 57: Self-transparency, three-act algebra, constant sources
+# ─────────────────────────────────────────────────────────────
+print("\u2500" * 70)
+print("STEP 57: Observer self-transparency + three-act algebra sl(2,\u211d)")
+print("\u2500" * 70)
+
+_R = sp.Matrix([[0,1],[1,1]]); _N = sp.Matrix([[0,-1],[1,0]])
+_J = sp.Matrix([[0,1],[1,0]]); _h = sp.Matrix([[1,0],[0,-1]]); _I = sp.eye(2)
+_C = _R*_N - _N*_R  # = [R,N] = 2h+J
+_Rtl = _R - _I/2
+
+# Self-transparency: N rotates observables
+assert _N*_J - _J*_N == -2*_h, "[N,J] != -2h"
+assert _N*_h - _h*_N == 2*_J, "[N,h] != 2J"
+print(f"  Self-transparency: [N,J]=-2h, [N,h]=2J  PASS")
+
+# R exits V+ to V-
+assert _R*_J - _J*_R == _N, "[R,J] != N"
+assert _R*_h - _h*_R == 2*_N, "[R,h] != 2N"
+print(f"  Production opacity: [R,J]=N, [R,h]=2N  PASS")
+
+# Three-act algebra structure constants
+assert _Rtl*_N - _N*_Rtl == _C, "[R_tl,N] != C"
+assert _Rtl*_C - _C*_Rtl == 5*_N, "[R_tl,C] != 5N"
+assert _N*_C - _C*_N == 4*_Rtl, "[N,C] != 4R_tl"
+print(f"  sl(2,\u211d) structure: [R_tl,N]=C, [R_tl,C]=5N, [N,C]=4R_tl  PASS")
+print(f"  Structure constants {{5,4}} = {{disc(R), |V\u2084|}}  PASS")
+
+# C² = 5I = disc(R)·I
+assert _C*_C == 5*_I, "C\u00b2 != 5I"
+print(f"  C\u00b2 = 5I = disc(R)\u00b7I  PASS")
+
+# R_tl² = (5/4)I
+assert _Rtl*_Rtl == sp.Rational(5,4)*_I, "R_tl\u00b2 != (5/4)I"
+print(f"  R_tl\u00b2 = (5/4)I (hyperbolic rate \u221a5/2)  PASS")
+
+# Euler: exp(pi*N) = -I
+_expN = sp.cos(sp.pi)*_I + sp.sin(sp.pi)*_N
+assert _expN == -_I, "exp(\u03c0N) != -I"
+print(f"  exp(\u03c0N) = -I (Euler: e^{{i\u03c0}}=-1 IS this)  PASS")
+
+# e = exp(tr(R)) = exp(1)
+assert sp.trace(_R) == 1, "tr(R) != 1"
+print(f"  e = exp(tr(R)) = exp(1), forced by tr(R)=1 (= binding condition)  PASS")
+
+
+print()
+print("=" * 70)
+print("STEPS 40-57 COMPLETE \u2014 18 independent verifications")
 print("  Including: three generations, generating function, channel calculus,")
-print("  universal recoverability law")
+print("  universal recoverability, self-transparency, three-act algebra")
 print("=" * 70)

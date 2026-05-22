@@ -1,7 +1,7 @@
 {
   "meta": {
     "format": "spiraldill-v3",
-    "total_entries": 190
+    "total_entries": 198
   },
   "entries": [
     {
@@ -15713,6 +15713,1212 @@
       "two_cells": [],
       "certificate": {
         "computed_hash": "sha256:601c5747f5b5478755fbe54119be11de54d8ee4451d022bc2e92b4277d614737",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1060,
+      "address": {
+        "depth": 0,
+        "projection": "P3",
+        "domain": "observer"
+      },
+      "name": "Self-transparency: [N,J] = -2h (N rotates observables)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "J"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "J"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": -2.0,
+          "target": {
+            "primitive": "ref",
+            "name": "h"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "J"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "J"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": -2.0,
+          "target": {
+            "primitive": "ref",
+            "name": "h"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0
+      ],
+      "status": "FORCED",
+      "x_state": "x.obs.0",
+      "tags": [
+        "self_transparency",
+        "observer_action"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:5f63bc725cc83470aa7b5fab89f9d7958126424b50f16bb0f133b8a264078c4a",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1061,
+      "address": {
+        "depth": 0,
+        "projection": "P3",
+        "domain": "observer"
+      },
+      "name": "Self-transparency: [N,h] = 2J (N rotates observables)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "h"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "h"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "ref",
+            "name": "J"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "h"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "h"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "ref",
+            "name": "J"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0
+      ],
+      "status": "FORCED",
+      "x_state": "x.obs.0",
+      "tags": [
+        "self_transparency",
+        "observer_action"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:2071ed7d34afce8cda2adddd111d482e080935c1f4ccfdd520cc951ea29239a2",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1062,
+      "address": {
+        "depth": 0,
+        "projection": "P1",
+        "domain": "observer"
+      },
+      "name": "Production opacity: [R,J] = N (R maps V+ to V-)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "J"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "J"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "ref",
+          "name": "N"
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "J"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "J"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "ref",
+          "name": "N"
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0
+      ],
+      "status": "FORCED",
+      "x_state": "x.obs.0",
+      "tags": [
+        "self_transparency",
+        "observer_action"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:468e22ed651d004ed1aa9375885e63869fe8ad12106c5ea8f80eaea6c05e3bb1",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1063,
+      "address": {
+        "depth": 0,
+        "projection": "P1",
+        "domain": "observer"
+      },
+      "name": "Production opacity: [R,h] = 2N (R maps V+ to V-)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "h"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "h"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "ref",
+            "name": "N"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "h"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "h"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "ref",
+            "name": "N"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0
+      ],
+      "status": "FORCED",
+      "x_state": "x.obs.0",
+      "tags": [
+        "self_transparency",
+        "observer_action"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:0ef37586abe8286b8bf1339a0823dfcfaf75664630c6c4b51cdd45a222f04380",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1064,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Three-act algebra: C²=5I=disc(R)·I where C=[R,N]=2h+J",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  }
+                ]
+              },
+              {
+                "primitive": "neg",
+                "target": {
+                  "primitive": "compose",
+                  "ops": [
+                    {
+                      "primitive": "ref",
+                      "name": "N"
+                    },
+                    {
+                      "primitive": "ref",
+                      "name": "R"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 5.0,
+          "target": {
+            "primitive": "ref",
+            "name": "I"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  }
+                ]
+              },
+              {
+                "primitive": "neg",
+                "target": {
+                  "primitive": "compose",
+                  "ops": [
+                    {
+                      "primitive": "ref",
+                      "name": "N"
+                    },
+                    {
+                      "primitive": "ref",
+                      "name": "R"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 5.0,
+          "target": {
+            "primitive": "ref",
+            "name": "I"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0,
+        5
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "three_act_algebra",
+        "consciousness_skeleton"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:4d41ea8d3bd876a6272ef94297f6799c3bdfd5864205843bac09d4927c71985f",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1065,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Three-act structure: [R_tl,C]=5N (metric weight=disc(R))",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "sum",
+                  "ops": [
+                    {
+                      "primitive": "ref",
+                      "name": "R"
+                    },
+                    {
+                      "primitive": "neg",
+                      "target": {
+                        "primitive": "scale",
+                        "factor": 0.5,
+                        "target": {
+                          "primitive": "ref",
+                          "name": "I"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "primitive": "sum",
+                  "ops": [
+                    {
+                      "primitive": "compose",
+                      "ops": [
+                        {
+                          "primitive": "ref",
+                          "name": "R"
+                        },
+                        {
+                          "primitive": "ref",
+                          "name": "N"
+                        }
+                      ]
+                    },
+                    {
+                      "primitive": "neg",
+                      "target": {
+                        "primitive": "compose",
+                        "ops": [
+                          {
+                            "primitive": "ref",
+                            "name": "N"
+                          },
+                          {
+                            "primitive": "ref",
+                            "name": "R"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "sum",
+                    "ops": [
+                      {
+                        "primitive": "compose",
+                        "ops": [
+                          {
+                            "primitive": "ref",
+                            "name": "R"
+                          },
+                          {
+                            "primitive": "ref",
+                            "name": "N"
+                          }
+                        ]
+                      },
+                      {
+                        "primitive": "neg",
+                        "target": {
+                          "primitive": "compose",
+                          "ops": [
+                            {
+                              "primitive": "ref",
+                              "name": "N"
+                            },
+                            {
+                              "primitive": "ref",
+                              "name": "R"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "primitive": "sum",
+                    "ops": [
+                      {
+                        "primitive": "ref",
+                        "name": "R"
+                      },
+                      {
+                        "primitive": "neg",
+                        "target": {
+                          "primitive": "scale",
+                          "factor": 0.5,
+                          "target": {
+                            "primitive": "ref",
+                            "name": "I"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 5.0,
+          "target": {
+            "primitive": "ref",
+            "name": "N"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "sum",
+                  "ops": [
+                    {
+                      "primitive": "ref",
+                      "name": "R"
+                    },
+                    {
+                      "primitive": "neg",
+                      "target": {
+                        "primitive": "scale",
+                        "factor": 0.5,
+                        "target": {
+                          "primitive": "ref",
+                          "name": "I"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "primitive": "sum",
+                  "ops": [
+                    {
+                      "primitive": "compose",
+                      "ops": [
+                        {
+                          "primitive": "ref",
+                          "name": "R"
+                        },
+                        {
+                          "primitive": "ref",
+                          "name": "N"
+                        }
+                      ]
+                    },
+                    {
+                      "primitive": "neg",
+                      "target": {
+                        "primitive": "compose",
+                        "ops": [
+                          {
+                            "primitive": "ref",
+                            "name": "N"
+                          },
+                          {
+                            "primitive": "ref",
+                            "name": "R"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "sum",
+                    "ops": [
+                      {
+                        "primitive": "compose",
+                        "ops": [
+                          {
+                            "primitive": "ref",
+                            "name": "R"
+                          },
+                          {
+                            "primitive": "ref",
+                            "name": "N"
+                          }
+                        ]
+                      },
+                      {
+                        "primitive": "neg",
+                        "target": {
+                          "primitive": "compose",
+                          "ops": [
+                            {
+                              "primitive": "ref",
+                              "name": "N"
+                            },
+                            {
+                              "primitive": "ref",
+                              "name": "R"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "primitive": "sum",
+                    "ops": [
+                      {
+                        "primitive": "ref",
+                        "name": "R"
+                      },
+                      {
+                        "primitive": "neg",
+                        "target": {
+                          "primitive": "scale",
+                          "factor": 0.5,
+                          "target": {
+                            "primitive": "ref",
+                            "name": "I"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 5.0,
+          "target": {
+            "primitive": "ref",
+            "name": "N"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0,
+        5,
+        6
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "three_act_algebra",
+        "consciousness_skeleton"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:23a2b21dc54526b7ea6e0d1f27c68354a666653521d2bb8a8d4099ade68cae8d",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1066,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "algebra"
+      },
+      "name": "Recursion depth: [R^2,N]=F_2·C=C (golden recursion in adjoint)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "pow",
+                  "target": {
+                    "primitive": "ref",
+                    "name": "R"
+                  },
+                  "exponent": 2
+                },
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  },
+                  {
+                    "primitive": "pow",
+                    "target": {
+                      "primitive": "ref",
+                      "name": "R"
+                    },
+                    "exponent": 2
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "pow",
+                  "target": {
+                    "primitive": "ref",
+                    "name": "R"
+                  },
+                  "exponent": 2
+                },
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  },
+                  {
+                    "primitive": "pow",
+                    "target": {
+                      "primitive": "ref",
+                      "name": "R"
+                    },
+                    "exponent": 2
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "rhs": {
+          "primitive": "sum",
+          "ops": [
+            {
+              "primitive": "compose",
+              "ops": [
+                {
+                  "primitive": "ref",
+                  "name": "R"
+                },
+                {
+                  "primitive": "ref",
+                  "name": "N"
+                }
+              ]
+            },
+            {
+              "primitive": "neg",
+              "target": {
+                "primitive": "compose",
+                "ops": [
+                  {
+                    "primitive": "ref",
+                    "name": "N"
+                  },
+                  {
+                    "primitive": "ref",
+                    "name": "R"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0,
+        5,
+        6
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "three_act_algebra",
+        "recursion_depth"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:544e50ffb76c84f0ae2b7813617d89f77cf866041ec742cd6c27c1d8d6da6476",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      }
+    },
+    {
+      "id": 1067,
+      "address": {
+        "depth": 0,
+        "projection": "P1",
+        "domain": "algebra"
+      },
+      "name": "Hyperbolic rate: R_tl²=(disc/4)·I=(5/4)I (P1/production flow rate sqrt(5)/2)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "R"
+              },
+              {
+                "primitive": "neg",
+                "target": {
+                  "primitive": "scale",
+                  "factor": 0.5,
+                  "target": {
+                    "primitive": "ref",
+                    "name": "I"
+                  }
+                }
+              }
+            ]
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 1.25,
+          "target": {
+            "primitive": "ref",
+            "name": "I"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "pow",
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "ref",
+                "name": "R"
+              },
+              {
+                "primitive": "neg",
+                "target": {
+                  "primitive": "scale",
+                  "factor": 0.5,
+                  "target": {
+                    "primitive": "ref",
+                    "name": "I"
+                  }
+                }
+              }
+            ]
+          },
+          "exponent": 2
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 1.25,
+          "target": {
+            "primitive": "ref",
+            "name": "I"
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        0,
+        5
+      ],
+      "status": "FORCED",
+      "x_state": "x.base.5",
+      "tags": [
+        "constant_source",
+        "three_act_algebra"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:e4fd17694289a85148f67c857172474925fc360cf9e868c8046d87ed06da7f7d",
         "proof_object_root": {
           "primitive": "equate",
           "class": "observer",

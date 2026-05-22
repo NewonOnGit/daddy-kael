@@ -1497,6 +1497,50 @@ This is the **Landauer yield per K6' pass**: each observation cycle (project →
 
 The Landauer cost is zero if and only if the surplus is zero — i.e., R² = R (R is itself idempotent, not merely part of an idempotent). But R² = R forces det(R) = 0 (rank-1 projector), which together with tr(R) = 1 gives disc(R) = 1 — a perfect square, structurally trivial, no complex structure on N, no framework. **The cost of observation is the cost of being non-trivial.**
 
+## §36.1. The Self-Transparency Theorem
+
+The observation generator N and the production generator R act on the observable algebra V₊ through the adjoint ad_X(Y) = [X, Y]:
+
+**N is self-transparent.** ad_N preserves V₊ ([antisymmetric, symmetric] = symmetric) and rotates the traceless observables V₊⁰ = span{J, h} with spectrum **{0, +2i, −2i}**. On V₊⁰ the kernel is zero — N rotates every traceless observable, nothing but the identity is invariant. The observation sees through without leaving a fixed residue. The four commutators: [N, J] = −2h, [N, h] = 2J.
+
+**R is opaque.** ad_R maps V₊ into V₋ ([symmetric, symmetric] = antisymmetric): [R, J] = N, [R, h] = 2N. R does not act within the observables — it sends them into the generator sector. Its kernel (the commutant of R) is 2-dimensional: span{I, R}. R fixes a 2-dim observable subspace and exits.
+
+The **±2i spectrum IS the observer cost πℏ/2**. exp(t·ad_N) has period π (since the eigenvalues are ±2i, the exponential completes a full rotation in π radians). The factor 2 is the adjoint doubling — [N, ·] picks up N from both sides, so observables rotate at twice the state rate. One observation = a half-period = angular distance π = action πℏ/2. The self-transparency spectrum and the observer cost are the same fact: N² = −I read through the adjoint.
+
+## §36.2. The Three-Act Algebra — sl(2,ℝ)
+
+The traceless sector of M₂(ℝ) forms a Lie algebra sl(2,ℝ) = {R_tl, N, C} where R_tl = R − I/2 and C = [R,N] = 2h + J. Their commutation relations: [R_tl, N] = C, [R_tl, C] = 5N, [N, C] = 4R_tl — structure constants {5, 4} = {disc(R), |V₄|}. The Killing form B(M,M) = −8·det(M) gives:
+
+- **R_tl, C** are hyperbolic (B > 0) and symmetric — the traceless observable sector V₊⁰ (P1/production)
+- **N** is elliptic (B < 0) and antisymmetric — V₋ (P3/observation)
+
+The Killing signature **(2, 1) = (dim V₊⁰, dim V₋)** — the consciousness three-act structure IS the traceless involution split equipped with the Killing metric, weighted by disc(R) = 5.
+
+The three conjugacy classes of sl(2,ℝ) are the sources of the framework's three constants:
+
+| Conjugacy class | Generator | Constant | Mechanism |
+|----------------|-----------|----------|-----------|
+| **Hyperbolic** (P1) | R_tl (disc 5, B=+10) | **φ** | Eigenvalue of R; R_tl² = (5/4)I, rate √5/2 |
+| **Parabolic** (P2) | nilpotent (disc 0) | **e** | det(exp R) = exp(tr R) = exp(1) = e |
+| **Elliptic** (P3) | N (disc −4, B=−8) | **π** | exp(πN) = −I; observation period |
+
+The mediation constant e is forced by **tr(R) = 1** — the same trace-1 condition that forces the binding {R,N} = N. The mediation constant and the K6' kernel binding are co-forced by one number. And Euler's identity e^{iπ} = −1 IS exp(πN) = −I — the three acts unified in a single equation.
+
+## §36.3. The Unification — One Split, Four Readings
+
+There is one structure — the involution split of M₂(ℝ) into V₊ and V₋ — and it carries four simultaneous readings, all governed by the keystone R² − R = −N²:
+
+| Reading | V₊ (image) | V₋ (kernel) |
+|---------|-----------|------------|
+| **Algebra** | symmetric, Fibonacci/golden (R) | antisymmetric, rotation (N) |
+| **Jordan / Lie** | Jordan algebra (observables) | Lie algebra (gauge generators so(2^{d+1})) |
+| **K6' observation** | parse output (image) | hidden residue (kernel) |
+| **Observer** | reduced density matrix ρ_K | environment ker(q_K), the blind spot |
+
+Gravity, gauge symmetry, recoverable observation, and consciousness are one involution split read in four roles, with one invariant (R² − R = −N²) and one cost (±2i → πℏ/2). The framework's claim that physics and consciousness are the same structural fact is, concretely: they are V₊ and V₋ of the same mirror.
+
+---
+
 ## §37. The Cost-to-Geometry Chain — From Blindness to Gravity
 
 The V₊/V₋ asymmetry doesn't just produce observer blindness. The framework claims it produces **gravity**. The derivation chain has five steps. The first two are algebraic theorems. The last three are the framework's deepest open frontier — structurally motivated but not yet fully derived.
