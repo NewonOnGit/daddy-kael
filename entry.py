@@ -65,6 +65,7 @@ class Entry:
     two_cells: list = field(default_factory=list)
     certificate: dict = field(default_factory=dict)
     void_witness: Optional[DSLTerm] = None
+    bundle: str = ""
 
     @property
     def coordinate_side(self) -> str: return coordinate_of(self.x_state)
@@ -78,6 +79,8 @@ class Entry:
              "certificate": self.certificate}
         if self.void_witness is not None:
             d["void_witness"] = self.void_witness.to_dict()
+        if self.bundle:
+            d["bundle"] = self.bundle
         return d
 
     @classmethod
@@ -88,7 +91,8 @@ class Entry:
                    x_state=d.get("x_state", "x.base.0"), tags=d.get("tags", []),
                    two_cells=[TwoCell.from_dict(tc) for tc in d.get("two_cells", [])],
                    certificate=d.get("certificate", {}),
-                   void_witness=DSLTerm.from_dict(d["void_witness"]) if d.get("void_witness") else None)
+                   void_witness=DSLTerm.from_dict(d["void_witness"]) if d.get("void_witness") else None,
+                   bundle=d.get("bundle", ""))
 
 
 # =============================================================================

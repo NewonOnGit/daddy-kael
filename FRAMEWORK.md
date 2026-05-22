@@ -594,6 +594,10 @@ At k = 2: (R ⊗ R)² = R⊗R + R⊗I + I⊗R + I⊗I. The canonical compression
 
 The closure law is spectrally rigid. Any X with X² = X + I has minimal polynomial dividing λ² − λ − 1, so **spec(X) ⊆ {φ, φ̄} in every dimension**. A level-k Fibonacci element is determined up to its multiplicity split (m_φ, m_φ̄) with m_φ + m_φ̄ = 2ᵏ and an eigenbasis gauge; the balanced pad-lift R ⊗ I^{⊗(k−1)} realizes it exactly. The tensor power R^{⊗k} is a different object — it satisfies (R^{⊗k})² = (R+I)^{⊗k}, not Fibonacci closure. No level admits a genuinely new R: the surplus law freezes the spectrum to the golden pair at every depth. Genuinely new structure enters only through the anticommuting-clique signatures of §14.
 
+### The Karoubi Envelope and the Adjoint Tower
+
+The K6' bundle structure has a categorical identity: a K6' bundle is a **split idempotent** (the round-trip closure e = parse ∘ serialize satisfies e² = e), and the category of K6' bundles is the **Karoubi envelope** of the base algebra. The lift functor F: e ↦ e ⊗ I sends idempotents at depth d to idempotents at depth d+1 (verified: (P⊗I)² = P⊗I). The descent functor G (partial trace over the fiber factor) is its adjoint: G ∘ F = tr(I) · id (descent after lift multiplies by the fiber dimension d = 2). The pair F ⊣ G is the standard induction/restriction adjunction between Karoubi envelopes, and the Clifford tower is a tower of these adjunctions. The Poincaré-polynomial functor K: Kar(C) → ℤ[x] sends a bundle to the generating function of its graded dimensions; the lift functor becomes polynomial multiplication under K (the binomial identity (1+x)^{a+b} = (1+x)^a · (1+x)^b is the monoidality of K), and (1+x)^p = (1+x)^10 at the SM depth is K evaluated on the generating idempotent P.
+
 ### Selection Law Exclusivity
 
 The compression family of §12 is **exclusive to the canonical gauge t = 2**. Under any alternative closure R² = aR + bI with (a, b) ≠ (1, 1):

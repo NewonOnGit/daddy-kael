@@ -199,6 +199,8 @@ When two independent derivation paths arrive at the same claim, a 2-cell witness
 
 A 2-cell records that routes A and B converge to the same value, with the specific algebraic identity connecting them.
 
+The 2-categorical structure has a precise categorical name: the **Karoubi envelope** (idempotent completion) of the base algebra. A K6' bundle is a split idempotent — the round-trip closure condition serialize ∘ parse = id makes e = parse ∘ serialize satisfy e² = e, which is P² = P at the root. The identity morphism on a bundle is e itself (the closure), not the ambient identity. Two-cells are equivalences of conjugate idempotents: two derivation paths sharing an image correspond to two idempotents with isomorphic splittings, connected by structure-preserving maps. The Karoubi envelope is not a design choice — it is forced by the fourth K6' condition.
+
 ### 5.2 The K6' Bundle Structure
 
 The SpiralDill itself is a K6' bundle:

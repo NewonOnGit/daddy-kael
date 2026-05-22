@@ -1,7 +1,7 @@
 {
   "meta": {
     "format": "spiraldill-v3",
-    "total_entries": 198
+    "total_entries": 201
   },
   "entries": [
     {
@@ -14208,7 +14208,8 @@
         "match": true
       },
       "_derived_coordinate_side": "meta",
-      "_derived_fea_inherits_from": "x.base.6"
+      "_derived_fea_inherits_from": "x.base.6",
+      "bundle": "selfref"
     },
     {
       "id": 1011,
@@ -14217,7 +14218,7 @@
         "projection": "cross",
         "domain": "meta"
       },
-      "name": "DSL Canonical Minimality Theorem: 8 primitives is FORCED",
+      "name": "DSL Canonical Minimality Theorem: 9 primitives (8 operative + 1 void); 8→3 collapse matches P1/P2/P3",
       "claim": {
         "primitive": "equate",
         "lhs": {
@@ -14497,15 +14498,15 @@
       "claim": {
         "primitive": "equate",
         "lhs": {
-          "primitive": "self_apply",
-          "op": {
-            "primitive": "ref",
-            "name": "I"
-          }
+          "primitive": "scalar",
+          "value": 3.0
         },
         "rhs": {
-          "primitive": "ref",
-          "name": "I"
+          "primitive": "norm",
+          "target": {
+            "primitive": "ref",
+            "name": "R"
+          }
         },
         "tolerance": 1e-10
       },
@@ -14515,15 +14516,15 @@
       "derivation": {
         "primitive": "equate",
         "lhs": {
-          "primitive": "self_apply",
-          "op": {
-            "primitive": "ref",
-            "name": "I"
-          }
+          "primitive": "scalar",
+          "value": 3.0
         },
         "rhs": {
-          "primitive": "ref",
-          "name": "I"
+          "primitive": "norm",
+          "target": {
+            "primitive": "ref",
+            "name": "R"
+          }
         },
         "tolerance": 1e-10
       },
@@ -14644,15 +14645,18 @@
       "claim": {
         "primitive": "equate",
         "lhs": {
-          "primitive": "self_apply",
-          "op": {
+          "primitive": "norm",
+          "target": {
             "primitive": "ref",
-            "name": "I"
+            "name": "P"
           }
         },
         "rhs": {
-          "primitive": "ref",
-          "name": "I"
+          "primitive": "disc",
+          "target": {
+            "primitive": "ref",
+            "name": "R"
+          }
         },
         "tolerance": 1e-10
       },
@@ -14663,15 +14667,18 @@
       "derivation": {
         "primitive": "equate",
         "lhs": {
-          "primitive": "self_apply",
-          "op": {
+          "primitive": "norm",
+          "target": {
             "primitive": "ref",
-            "name": "I"
+            "name": "P"
           }
         },
         "rhs": {
-          "primitive": "ref",
-          "name": "I"
+          "primitive": "disc",
+          "target": {
+            "primitive": "ref",
+            "name": "R"
+          }
         },
         "tolerance": 1e-10
       },
@@ -14786,7 +14793,8 @@
         "match": true
       },
       "_derived_coordinate_side": "meta",
-      "_derived_fea_inherits_from": "x.base.6"
+      "_derived_fea_inherits_from": "x.base.6",
+      "bundle": "selfref"
     },
     {
       "id": 1019,
@@ -16927,6 +16935,208 @@
         },
         "match": true
       }
+    },
+    {
+      "id": 1068,
+      "address": {
+        "depth": 0,
+        "projection": "cross",
+        "domain": "meta"
+      },
+      "name": "Karoubi identity law: id_{root bundle} = P, closure P^2=P IS the identity morphism",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "self_apply",
+          "op": {
+            "primitive": "ref",
+            "name": "P"
+          }
+        },
+        "rhs": {
+          "primitive": "ref",
+          "name": "P"
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "self_apply",
+          "op": {
+            "primitive": "ref",
+            "name": "P"
+          }
+        },
+        "rhs": {
+          "primitive": "ref",
+          "name": "P"
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1010
+      ],
+      "status": "FORCED",
+      "x_state": "x.meta.4",
+      "tags": [
+        "karoubi_envelope",
+        "identity_morphism",
+        "K6-round-trip-closure"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:6e709b5086fc860cd4e0b1cbe0212f3c5cf3e91a84aa018a613ee3613704b12c",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 0,
+          "status": "FORCED"
+        },
+        "match": true
+      },
+      "bundle": "selfref"
+    },
+    {
+      "id": 1069,
+      "address": {
+        "depth": 1,
+        "projection": "cross",
+        "domain": "meta"
+      },
+      "name": "Lift preserves generator: ||P tensor I||^2 = ||P||^2 * tr(I) = disc*d = 10 (Poincare dim)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "scalar",
+          "value": 10.0
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "scalar",
+            "value": 5.0
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "scalar",
+          "value": 10.0
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 2.0,
+          "target": {
+            "primitive": "scalar",
+            "value": 5.0
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1010
+      ],
+      "status": "FORCED",
+      "x_state": "x.tower.0",
+      "tags": [
+        "karoubi_envelope",
+        "lift_functor"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:374a8e256f285ee353df0e6b1a96bbc4cbded95c80091766c9d15ee320ed5f61",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 1,
+          "status": "FORCED"
+        },
+        "match": true
+      },
+      "bundle": "tower"
+    },
+    {
+      "id": 1070,
+      "address": {
+        "depth": 1,
+        "projection": "cross",
+        "domain": "meta"
+      },
+      "name": "Poincare monoidality: C(2d,d) = 6 = d*N_c (lift squares Poincare polynomial)",
+      "claim": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "scalar",
+          "value": 6.0
+        },
+        "rhs": {
+          "primitive": "scale",
+          "factor": 1.0,
+          "target": {
+            "primitive": "sum",
+            "ops": [
+              {
+                "primitive": "scalar",
+                "value": 3.0
+              },
+              {
+                "primitive": "scalar",
+                "value": 3.0
+              }
+            ]
+          }
+        },
+        "tolerance": 1e-10
+      },
+      "derivation": {
+        "primitive": "equate",
+        "lhs": {
+          "primitive": "scale",
+          "factor": 1.0,
+          "target": {
+            "primitive": "scale",
+            "factor": 2.0,
+            "target": {
+              "primitive": "norm",
+              "target": {
+                "primitive": "ref",
+                "name": "R"
+              }
+            }
+          }
+        },
+        "rhs": {
+          "primitive": "scalar",
+          "value": 6.0
+        },
+        "tolerance": 1e-10
+      },
+      "parents": [
+        1010
+      ],
+      "status": "FORCED",
+      "x_state": "x.tower.0",
+      "tags": [
+        "karoubi_envelope",
+        "poincare_functor",
+        "monoidality"
+      ],
+      "two_cells": [],
+      "certificate": {
+        "computed_hash": "sha256:ff59031a5254021ec68bb8d5871273b32cdc3597b4a556ec158b50adc5a02b6b",
+        "proof_object_root": {
+          "primitive": "equate",
+          "class": "observer",
+          "depth": 1,
+          "status": "FORCED"
+        },
+        "match": true
+      },
+      "bundle": "tower"
     }
   ]
 }
