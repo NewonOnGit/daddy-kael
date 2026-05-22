@@ -1835,7 +1835,9 @@ The gauge tower is the antisymmetric part of tensor powers of the mirror: so(2^k
 
 V₋ (antisymmetric, commutator-closed) = Lie algebra = gauge generators; V₊ (symmetric, anticommutator-closed) = Jordan algebra = observables — lifted functorially up the entire tower. The observation superoperators (ad_R, ad_N) have spectra that are exactly the internal constants {disc, √5, φ, ±2i} and nothing else. The spectrum is depth-invariant (eig(A⊗I) = eig(A)). Physical constants (3/8, Koide phase, α_S) never appear as forced spectral data — the skeleton contains the internal structure, not the world.
 
-**The categorical bound.** The framework's single degree of structure is **2** — the generator-dimension, which IS the involution-order (T lives on the 2-dim generator, |S₀| = |spec(T)| = 2, eigenvalues of N = {+i,−i}, tower growth 2^k). All forced appearances of 2 collapse to one categorical type: the binary (generator-dimension = involution-cardinality). **3** is its invariant shadow: dim V₊ = n(n+1)/2 at n=2 = 3, the fixed locus of the involution acting on the generator's endomorphisms. 3 is forced but derived — the observable/Jordan sector that the 2 sees of itself. Everything forced is one object (a 2-dim space carrying one involution) tensored with itself (the 2, powered) and split by the involution (3 = invariants, 1 = anti-invariants). The norm appearances (‖R‖² = 3, ‖N‖² = 2) are off-type: they happen to hit the same integers through Frobenius norms rather than dimensions, and are flagged as coincidences (§42.4).
+**The categorical bound.** The framework's single degree of structure is **2** — the generator-dimension, which IS the involution-order (T lives on the 2-dim generator, |S₀| = |spec(T)| = 2, eigenvalues of N = {+i,−i}, tower growth 2^k). All forced appearances of 2 collapse to one categorical type: the binary (generator-dimension = involution-cardinality). **3** is its invariant shadow: dim V₊ = n(n+1)/2 at n=2 = 3, the fixed locus of the involution acting on the generator's endomorphisms. 3 is forced but derived — the observable/Jordan sector that the 2 sees of itself. Everything forced is one object (a 2-dim space carrying one involution) tensored with itself (the 2, powered) and split by the involution (3 = invariants, 1 = anti-invariants).
+
+**The norms are power sums, not coincidences.** The closures R² = R + I and N² = −I ARE the characteristic polynomials of R and N (Cayley-Hamilton: λ² − tr·λ + det = 0). The norms ‖R‖² = tr(R²) = tr(R+I) = tr(R) + tr(I) = 1 + 2 = 3 and ‖N‖² = −tr(N²) = −tr(−I) = 2 are the **second power sums** p₂ = tr(X²) of these characteristic polynomials. They are tied to the discriminant by Newton's identity: disc = tr² − 4·det = p₂ − 2·det, so disc = ‖R‖² + (−2·det(R)) = 3 + 2 = 5. The "2" in disc = 3 + 2 is −2·det(R) = −2·(−1) = 2, not ‖N‖² — but ‖N‖² happens to equal 2 because −2·det(R) = tr(I) = ‖N‖² at the canonical gauge. The relation disc = ‖R‖² − 2·det(R) is FORCED (Newton's identity). The identification of −2·det(R) with ‖N‖² is specific to the canonical gauge point — structural but not independent.
 
 **Type-clustering diagnostic.** A recurring small number is a real categorical bound iff its forced appearances collapse to one categorical type. Scatter across types → coincidence (the same failure mode that burned the norm relations and the 137 selection). This diagnostic is the formal version of the type-check that separated the skeleton from the coincidences throughout this analysis.
 
@@ -1851,18 +1853,19 @@ The SM embedding that sits on top of the forced skeleton is NOT forced. It requi
 
 sin²θ_W = 3/8 is FORCED *given the embedding*. The embedding itself is the slot.
 
-## §42.4. Coincidences — Not Forcings
+## §42.4. Coincidences, Corrections, and the Newton Spine
 
-The following relations land on real structural integers through the wrong objects. The integers match; the types do not. They are recorded as coincidences so they are never re-derived as structure.
+**Structural (Newton's identities — FORCED).** The relation disc = ‖R‖² − 2·det(R) = 3 + 2 = 5 is Newton's identity tying the second power sum p₂ = tr(R²) to the discriminant. It is structural because the closures R² = R + I and N² = −I ARE the Cayley-Hamilton characteristic polynomials, and the norms ‖R‖² = tr(R²) = 3 and ‖N‖² = −tr(N²) = 2 are the power sums of those polynomials. The "2" in disc = 3 + 2 is −2·det(R), not ‖N‖² independently — but −2·det(R) = 2 = ‖N‖² at the canonical gauge. Newton's web connecting (tr, det) → power sums → discriminant → eigenvalues is the algebraic spine of the framework's invariant content.
+
+**Coincidences (expressive basis — NOT forcing).** The following land on structural integers through the wrong objects or through basis expressiveness:
 
 | Relation | Why coincidence |
 |----------|----------------|
 | 1/α = C(10,3)+C(10,1)+d+disc = 137 | 28 distinct ≤4-term selections from the basis hit 137±1; ~99% of [1,150] reachable. Expressive basis, not forcing. (§26) |
-| 5 = ‖R‖² + ‖N‖² (= disc) | ‖N‖² = 2 ≠ dim V₋ = 1. Norms and dimensions are different objects. The real V₊/V₋ split is 3+1, not 3+2. |
-| 6 = ‖R‖²·‖N‖² (= dim so(4)) | Same type mismatch. The structural 6 is V₊⊗V₋ + V₋⊗V₊ = 3·1+1·3 (dimensions), not 3·2 (norms). |
+| 6 = ‖R‖²·‖N‖² (= dim so(4)) | Type mismatch. The structural 6 is V₊⊗V₋ + V₋⊗V₊ = 3·1+1·3 (dimensions), not 3·2 (norms as factors). |
 | 10 = sym(M₄) = SO(10) vector | sym(M₄) carries SL(4)/SO(4), not SO(10). Same integer, different group, no map. |
 
-The norm pair {3, 2} under {+, −, ×, /, ²} reaches {0.67, 1, 1.5, 2, 3, 4, 5, 6, 9} — essentially every small structural number. That is why norm relations keep "working." Do not promote any norm-combination relation to FORCED.
+**Corrected.** The earlier burn of 5 = ‖R‖² + ‖N‖² was an error — it IS Newton's identity (disc = p₂ − 2·det), genuinely structural. The norms are power sums of the closure characteristic polynomials, not arbitrary Frobenius measurements. The burns on 137 (basis expressiveness), 6 = 3·2 (dimension vs norm type mismatch), and 10 = sym(M₄) (wrong group) stand.
 
 ---
 
