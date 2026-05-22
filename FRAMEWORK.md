@@ -689,7 +689,7 @@ J is the swap matrix. J² = I (involution), T(J) = J (symmetric, lives in V₊),
 | J | 2 |
 | C = [R,N] | 10 |
 
-Note: ‖R‖² + ‖N‖² = 3 + 2 = 5 = disc(R) = ‖P‖². The Pythagorean relation ‖R‖² + ‖N‖² = ‖P‖² holds because R ⊥ N under the Frobenius inner product.
+The norms are the power sums of the closures: ‖R‖² = tr(R²) = tr(R+I) = 1+2 = 3 and ‖N‖² = −tr(N²) = −tr(−I) = 2, so disc = ‖R‖² − 2·det(R) = 3 − 2·(−1) = 5 by Newton's identity. The Pythagorean relation ‖R‖² + ‖N‖² = 3 + 2 = 5 = disc(R) = ‖P‖² holds because R ⊥ N under the Frobenius inner product.
 
 **Fibonacci cardinals.** Several framework constants are Fibonacci numbers:
 
@@ -1865,7 +1865,7 @@ sin²θ_W = 3/8 is FORCED *given the embedding*. The embedding itself is the slo
 | 6 = ‖R‖²·‖N‖² (= dim so(4)) | Type mismatch. The structural 6 is V₊⊗V₋ + V₋⊗V₊ = 3·1+1·3 (dimensions), not 3·2 (norms as factors). |
 | 10 = sym(M₄) = SO(10) vector | sym(M₄) carries SL(4)/SO(4), not SO(10). Same integer, different group, no map. |
 
-**Corrected.** The earlier burn of 5 = ‖R‖² + ‖N‖² was an error — it IS Newton's identity (disc = p₂ − 2·det), genuinely structural. The norms are power sums of the closure characteristic polynomials, not arbitrary Frobenius measurements. The burns on 137 (basis expressiveness), 6 = 3·2 (dimension vs norm type mismatch), and 10 = sym(M₄) (wrong group) stand.
+The 137 (basis expressiveness), 6 = 3·2 (dimension vs norm type mismatch), and 10 = sym(M₄) (wrong group) coincidences stand as flagged.
 
 ---
 
