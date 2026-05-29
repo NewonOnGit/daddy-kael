@@ -16,8 +16,6 @@ Every claim is graded:
 | **GAP** | Known obstruction with verified void-witness. |
 | **OPEN** | Bridge not yet returned. |
 
-Companion verifier: `recursive_origin_verify.py` (175 executable claims, 0 failures).
-
 ---
 
 # PART 0 — THE PRIMITIVE
@@ -331,7 +329,13 @@ The eigenvalues {n², n} are forced by the base dimension n alone (verified symb
 
 ## §6.2. The Newton Spine
 
-The closures R² = R + I and N² = −I ARE the Cayley-Hamilton characteristic polynomials (λ² − tr·λ + det = 0). The norms are the second power sums of these polynomials:
+The norm and the discriminant are not two structures but one operation read at two levels. The mirror folded on its own operand is
+
+M(X) = τ(X) · X
+
+— the transpose contracted against the matrix it came from. The Frobenius norm is the trace of this fold, ‖X‖² = tr(τ(X)·X): the norm is the mirror contracted on its operand and then closed by the trace. The discriminant is the same fold left untraced. There is one product M(X) = τ(X)·X; tracing it gives the norm, holding it as a matrix gives the discrimination.
+
+The closures R² = R + I and N² = −I ARE the Cayley-Hamilton characteristic polynomials (λ² − tr·λ + det = 0). The folds are the second power sums of these polynomials:
 
 ‖R‖² = tr(R²) = tr(R+I) = 1 + 2 = 3
 ‖N‖² = −tr(N²) = −tr(−I) = 2
@@ -341,6 +345,19 @@ Newton's identity ties them to the discriminant:
 disc = ‖R‖² − 2·det(R) = 3 − 2·(−1) = 3 + 2 = 5
 
 The "2" in disc = 3 + 2 is −2·det(R), which equals ‖N‖² = tr(I) = 2 at the canonical gauge. The Pythagorean relation ‖R‖² + ‖N‖² = 3 + 2 = 5 = disc(R) = ‖P‖² holds because R ⊥ N under the Frobenius inner product.
+
+**Sum and difference of the fold.** The two ways to combine the folds of the two generators recover the two load-bearing cardinals:
+
+- **Sum** ‖R‖² + ‖N‖² = 5 = disc — the discrimination.
+- **Difference** ‖R‖² − ‖N‖² = 1 — the +I surplus of R² = R + I. Under the tensor lift R_d = R ⊗ I^{⊗d}, the difference scales as ‖R_d‖² − ‖N_d‖² = 2^d = Δ, the dimensional asymmetry of §2.2. The surplus that pays the Landauer cost is a fold readout, not a separate postulate.
+
+**The untraced fold is the discriminant.** The commutator C = [R,N] = 2h + J is symmetric (τ(C) = C), so its fold is its square: M(C) = C² = 5·I = disc·I. The discriminant is the mirror-fold of the R–N tension, held as a matrix. Equivalently disc = (φ − φ̄)² — discrimination is the squared spread of R's eigenvalues, since φ + φ̄ = tr(R) = 1 and φ·φ̄ = det(R) = −1.
+
+**The fold metric is flat.** The Gram matrix of {I, J, h, N} under ⟨X,Y⟩ = tr(τ(X)·Y) is 2·I₄: positive-definite, signatureless. The fold delivers magnitude, not geometry. Lorentz signature enters only through the V₊ ⊗ V₋ product structure of the tower (THE PHYSICS §1), never through the fold.
+
+**The fold is the observer.** M(X) = τ(X)·X is a Gram product, hence symmetric, hence always in V₊. The fold cannot land in V₋: M(N) = M(−N) = I, blind to the hidden sector's orientation. This is the constitutive blindness ker q_K = V₋, read off the fold itself rather than posited separately (§8.2). On the seed, M(P) = τ(P)·P has eigenvalues {disc, 0} = {5, 0}: a rank-1 density operator whose entire observable weight is the discriminant and whose zero eigenvalue is the blind V₋ direction.
+
+**The fold climbs two ways.** Tracing the fold advances the Fibonacci index by one (the successor recurrence below). Iterating the fold on V₊, where M(X) = X², doubles the Fibonacci index: M^k(R) = R^{2^k} = F_{2^k}·R + F_{2^k−1}·I, with trace L_{2^k}. The same fold/square pair generates the whole compression family of §5.1 — disc(R^n) = C_n² = 5·F_n² is the untraced fold of the n-th tension C_n = [R^n, N] at every power.
 
 **Fibonacci cardinals.** Several framework constants are Fibonacci numbers:
 
@@ -415,6 +432,8 @@ The observer's parents in the x-state taxonomy: x.base.1 (identity) and x.base.2
 ## §8.2. Constitutive Blindness: ker q_K ≠ 0
 
 The observer's projection is irreducibly lossy. At base: V₊ has dimension 3, V₋ has dimension 1. The projection maps 4-dimensional M₂(ℝ) to 3-dimensional V₊. The kernel (V₋ = span(N)) is constitutively invisible — not because the observer lacks instruments, but because the projection IS the observation.
+
+The blindness is exactly the mirror-fold of §6.2. Observation is the fold M(X) = τ(X)·X, and a fold is a Gram product: it is always symmetric, always in V₊, never in V₋. The hidden sector cannot survive it — M(N) = M(−N) = I — so V₋'s orientation is annihilated by the act of observing, not lost downstream of it. The kernel ker q_K = V₋ is the kernel of the fold. On the seed this is sharpest: M(P) is a rank-1 density operator with eigenvalues {disc, 0}, the entire observable weight carried by the discriminant and the zero eigenvalue marking the blind direction.
 
 At depth d: Δ = 2^{d+1} grows exponentially. The observer's blind spot grows with the tower.
 

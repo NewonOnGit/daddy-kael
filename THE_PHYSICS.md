@@ -8,7 +8,7 @@ This document derives the Standard Model, general relativity, three fermion gene
 
 Every claim is graded: FORCED (given the embedding) / NUMERICAL (exact expression matched to observation) / RESONANT (pattern, not closed) / GAP (known obstruction) / OPEN (bridge not returned). Every outward-pointing number carries its falsification threshold.
 
-Companion: THE ALGEBRA (the foundational derivation). Verifier: `recursive_origin_verify.py`.
+Companion: THE ALGEBRA (the foundational derivation).
 
 ---
 
@@ -325,6 +325,8 @@ The following have exact cardinal expressions but the basis is expressive (type-
 - Symmetric + antisymmetric ansatz → tribimaximal only
 - boundary_dim as BH entropy → S ~ n⁴/4 not n²/4
 - Terminal object for K6' self-reference → REJECTED (it's a fixed point)
+- Mirror-fold doubling {1,2,4,8,16} as the anchor lattice → the fold doubles the Fibonacci index, the lattice is Bott mod 8 ∩ chirality; different 2-climbs, no forced link
+- Mirror-fold metric as the source of Lorentz signature → the fold Gram is 2·I₄ (Euclidean); signature is a V₊ ⊗ V₋ product property of the tower, not a fold property
 
 ---
 
